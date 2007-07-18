@@ -1,0 +1,349 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Maglione Informatica
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: daniel@maglione.com.br\n"
+"POT-Creation-Date: 2007-05-02 21:05-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:194
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:116
+msgid "* obrigatory field"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:195
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:117
+msgid "Error:"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:195
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:117
+msgid "please verify form."
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:197
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:124
+msgid "User"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:198
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:128
+msgid "Password"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:202
+msgid "Language"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:216
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:218
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:163
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:182
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:187
+msgid "Field exceeded maximum length:"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:216
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:217
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:163
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:164
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:165
+msgid " User"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:217
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:219
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:165
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:169
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:175
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:184
+msgid "Obrigatory field:"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:218
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:219
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:169
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:171
+msgid " Password"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:226
+msgid "<p class=\"loginerror\">Invalid Login</p>"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:251
+msgid "Home"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:375
+msgid "Search"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:378
+msgid "View all"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:385
+msgid "Add"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:390
+msgid "Are you sure you want to delete (This operation can not be undone)?"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:390
+msgid "Remove"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:452
+msgid "Logged in as"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/libs/Maglione.php:452
+msgid "Logout"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:40
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:95
+msgid "Samba Flags"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:41
+msgid "No password required"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:42
+msgid "Account disabled"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:43
+msgid "Home directory required"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:44
+msgid "Temporary duplicate of other account"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:45
+msgid "Regular user account"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:46
+msgid "MNS logon user account"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:47
+msgid "Workstation Trust Account"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:48
+msgid "Server Trust Account"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:49
+msgid "Automatic Locking"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:50
+msgid "Password does not expire"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:51
+msgid "Domain Trust Account"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:82
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:272
+msgid "Username"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:83
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:125
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:273
+msgid "Full Name"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:84
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:126
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:274
+msgid "E-Mail"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:85
+msgid "Home Directory"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:87
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:89
+msgid "User can change password?"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:87
+msgid "Yes"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:89
+msgid "No"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:92
+msgid "DN"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:93
+msgid "UID"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:94
+msgid "SID"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:96
+msgid "Last login"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:97
+msgid "Last logout"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:98
+msgid "Last password change"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:99
+msgid "Next required password change"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:129
+msgid "Password (repeat)"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:130
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:191
+msgid "User Must Change Password"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:131
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:191
+msgid "User Cannot Change Password"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:133
+msgid "Password Never Expires"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:134
+msgid "Account Disabled"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:135
+msgid "Account Locked"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:148
+msgid "Insert"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:164
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:171
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:183
+msgid "Field must contains only numbers and letters:"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:172
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:177
+msgid "Password must have between 3 and 10 characters"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:175
+msgid " Password (repeat)"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:179
+msgid "The passwords do not match"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:182
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:183
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:184
+msgid " Full Name"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:187
+msgid " E-Mail"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:188
+msgid "Not a valid e-mail"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:191
+msgid "Only one of this fields can be selected at the same time: "
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/users.php:343
+msgid "User Accounts"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/module.php:7
+msgid "File Server"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/module.php:11
+msgid "Account Policy"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/module.php:15
+msgid "Manage user accounts"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/module.php:19
+msgid "Manage group accounts"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/module.php:23
+msgid "Manage computer accounts"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/module.php:27
+msgid "Show connected computers"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/module.php:31
+msgid "Samba Server log"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/samba/module.php:35
+msgid "NetBIOS log"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/server/module.php:3
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/server/module.php:7
+msgid "Server Management"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/server/module.php:11
+msgid "Manage Services"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/server/module.php:15
+msgid "Monitor Services"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/server/module.php:19
+msgid "LDAP Server log"
+msgstr ""
+
+#: /home/vhosts/maglione.com.br/subdomains/desenvolvimento/httpdocs/modules/server/module.php:23
+msgid "System log"
+msgstr ""

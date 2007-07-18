@@ -1,0 +1,812 @@
+/* $Id: tigris.css,v 1.2 2004/05/03 09:45:17 dbarth Exp $
+	
+	This file defines basic default formatting for HTML conforming to Tigris application style. To extend or override these rules for your instance, import one or more additional sheets after this one. */
+
+/* colors, backgrounds, borders, link indication */
+body {
+	background: #fff;
+	color: #000;
+}
+
+h1 {
+	font-weight: normal;
+	font-size: medium;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	font-size: large;
+}
+
+h2 {
+	margin-top: 0;
+}
+
+.h2 {
+	border-top: 2px solid #666;
+	margin-top: 1.67em;
+}
+
+.tabs td, .tabs th, .functnbar {
+	background-image: url(../images/nw_maj_rond.gif);
+	background-repeat: no-repeat;
+}
+
+.functnbar, .functnbar2 {
+	background-color: #aaa;
+}
+
+.functnbar2 {
+	background-image: url(../images/sw_maj_rond.gif);
+	background-repeat: no-repeat;
+	background-position: bottom left;
+}
+
+.functnbar3 {
+	background-color: #ddd;
+	background-repeat: no-repeat;
+	background-image: url(../images/se_maj_rond.gif);
+	background-position: bottom right;
+}
+
+.navgroup dd li {
+	background-image: url(../images/strich.gif);
+	background-repeat: no-repeat;
+	background-position: .5em .5em;
+}
+
+a:link {
+	text-decoration: none;
+	border-bottom: 1px dotted #03f;
+}
+
+a:link, #navcol a:visited, #bodycol a:visited, #tasknav a:visited {
+	color: #03c;
+}
+
+a:link.selfref, a:visited.selfref {
+	color: #555 !important;
+	text-decoration: none;
+	border-bottom: none;
+}
+
+a:active, a:hover, #navcol a:active, #navcol a:hover {
+	color: #f30 !important;
+}
+
+#toptabs {
+	margin: 0;
+	padding-top: .67em;
+	padding-left: 8px;
+}
+
+#navcol a, #breadcrumbs a {
+	text-decoration: none;
+	border-bottom: none;
+}
+
+.a td {
+	background: #ddd;
+}
+
+.b td {
+	background: #efefef;
+}
+
+.colbar {
+	background: #eee;
+	border-color: #999 #eee #eee #999;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.navgroup {
+	background: #efefef;
+}
+
+.navgroup dt {
+	border-bottom: 1px solid #666;
+	border-right: 1px solid #666;
+	background: #ddd;
+	color: #555;
+}
+
+.navgroup dd {
+	border-right: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+}
+
+#breadcrumbs {
+	border-top: 1px solid #fff;
+	background-color: #ccc;
+}
+
+#main {
+	border-top: 1px solid #999;
+}
+
+#helptext dt {
+	background-image: url(../images/icon_help_sml.gif);
+	background-repeat: no-repeat;
+	background-position: 97%;
+}
+
+h1 em {
+	color: #777;
+}
+
+th {
+	background-color: #bbb;
+}
+
+.tabs th {
+	border-right: 1px solid #333;
+	background-color: #ddd;
+	color: #fff;
+	border-left: 1px solid #fff;
+}
+
+.tabs td {
+	background-color: #999;
+	border-bottom: 1px solid #fff;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+}
+
+.tabs th, .tabs th a:link, .tabs th a:visited {
+	color: #555;
+}
+
+.tabs td, .tabs td a:link, .tabs td a:visited {
+	color: #fff;
+}
+
+.tabs a {
+	text-decoration: none;
+	border-bottom: none;
+}
+
+.axial th {
+	background-color: #ddd;
+	color: black;
+}
+
+.alert {
+	background-color: #ff9;
+}
+
+.expandedwaste {
+	background: url(../images/expanded_big.gif) no-repeat;
+	background-position: .2em .2em;
+}
+
+.collapsedwaste {
+	background: url(../images/collapsed_big.gif) no-repeat;
+	background-position: .2em .2em;
+}
+
+.filebrowse .expanded, .filebrowse-alt .expanded {
+	background-image: url(../images/expanded_big.gif);
+	background-repeat: no-repeat;
+	background-position: .2em .2em;
+}
+
+.filebrowse .collapsed, .filebrowse-alt .collapsed {
+	background-image: url(../images/collapsed_big.gif);
+	background-repeat: no-repeat;
+	background-position: .2em .2em;
+}
+
+.filebrowse .leafnode, .filebrowse-alt .leafnode {
+	background-image: url(../images/icon_folder_sml.gif);
+	background-repeat: no-repeat;
+}
+
+.filebrowse .leaf, .filebrowse-alt .leaf {
+	background-image: url(../images/icon_doc_sml.gif);
+	background-repeat: no-repeat;
+}
+
+.sortup {
+	background: url(../images/icon_sortup.gif) no-repeat;
+}
+
+.sortdown {
+	background: url(../images/icon_sortdown.gif) no-repeat;
+}
+
+a.collapsedwaste {
+	background: url(../images/collapsed_big.gif) no-repeat;
+	border: none
+}
+
+a. expandedwaste, a.collapsedwaste, a.sortdown, a.sortup, a.expanded, a.collapsed, a.leaf, a.leafnode {
+	border: none
+}
+
+body .grid td {
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	background-color: transparent;
+}
+
+.confirm {
+	color: #090;
+}
+
+.info {
+	color: #069;
+}
+
+.errormessage, .warningmessage, .donemessage, .infomessage {
+	border-top: 5px solid #900;
+	border-left: 1px solid #900;
+	background-image: url(../images/icon_error_lrg.gif);
+	background-repeat: no-repeat;
+	background-position: 5px 1.33em;
+}
+
+.warningmessage {
+	background-image: url(../images/icon_warning_lrg.gif);
+	border-color: #c60;
+}
+
+.donemessage {
+	background-image: url(../images/icon_success_lrg.gif);
+	border-color: #090;
+}
+
+.infomessage {
+	background-image: url(../images/icon_info_lrg.gif);
+	border-color: #069;
+}
+
+.docinfo {
+	background: url(../images/icon_doc_lrg.gif) no-repeat;
+}
+
+.dirinfo {
+	background: url(../images/icon_folder_lrg.gif) no-repeat;
+}
+
+.errormark, .warningmark, .donemark, .infomark {
+	background: url(../images/icon_error_sml.gif) no-repeat;
+}
+
+.warningmark {
+	background-image: url(../images/icon_warning_sml.gif);
+}
+
+.donemark {
+	background-image: url(../images/icon_success_sml.gif);
+}
+
+.infomark {
+	background-image: url(../images/icon_info_sml.gif);
+}
+
+.helplink {
+	cursor: help;
+}
+
+.legend th, .bars th {
+	background-color: #fff;
+}
+
+/* font and text properties, exclusive of link indication, alignment, text-indent */
+body, input, select {
+	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
+}
+
+code, pre {
+	font-family: 'Andale Mono', Courier, monospace;
+}
+
+body, h2, h3, h4, pre, code, h1 small {
+	font-size: x-small;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	font-size: small;
+}
+
+small, div#footer, div#login, .tabs th, .tabs td, #navcol, input, select, .paginate, .functnbar, .functnbar2, .functnbar3, #breadcrumbs, .courtesylinks, .colbar, .tasknav, #sidebar, .legend, .bars {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: xx-small;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	font-size: x-small;
+}
+
+.tabs td, .tabs th, dt, .tasknav .selfref, #login .username, .selection {
+	font-weight: bold;
+}
+
+li.selection ul {
+	font-weight: normal;
+}
+
+h1 em {
+	font-style: normal;
+}
+
+#banner h2 {
+	font-size: 1.25em;
+}
+
+table {
+	font-size: 1em;
+}
+
+/* box properties (exclusive of borders), positioning, alignments, list types, text-indent */
+#bodycol h1 {
+	margin-top: .3em;
+	margin-bottom: .5em;
+}
+
+p, ul, ol, dl, .bars table {
+	margin-top: .67em;
+	margin-bottom: .67em;
+}
+
+h2, h3, h4 {
+	margin-bottom: 0;
+}
+
+form {
+	margin: 0;
+}
+
+#bodycol {
+	padding-left: 12px;
+	padding-right: 12px;
+	width: 100%;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	width: auto;
+}
+
+html>body #bodycol {
+	width: auto;
+}
+
+ol ol {
+	list-style-type: lower-alpha;
+}
+
+ol ol ol {
+	list-style-type: lower-roman;
+}
+
+.h2 p, .h3 p, .h4 p, .h2 dt, .h3 dt, .h4 dt {
+	margin-right: 7px;
+	margin-left: 7px;
+}
+
+.tasknav {
+	margin-bottom: 1.33em;
+}
+
+.tabs {
+	margin-top: .67em;
+	margin-right: 2px;
+	margin-left: 2px;
+	padding-left: 8px;
+}
+
+.tabs td, .tabs th {
+	padding: 3px 9px;
+}
+
+#rightcol div.www, #rightcol div.help {
+	padding: 0 .5em;
+}
+
+.navgroup li {
+	margin-top: 7px;
+	padding-left: 10px;
+	list-style-type: none;
+}
+
+.functnbar, .functnbar2, .functnbar3 {
+	padding: 5px 1em;
+	margin: .67em 2px;
+}
+
+.functnbar3 {
+	padding: 3px 1em;
+	margin-top: 0;
+	text-align: right;
+}
+
+body {
+	padding: 1em;
+}
+
+body.composite {
+	margin: 0;
+	padding: 0;
+}
+
+th, td {
+	text-align: left;
+	vertical-align: top;
+}
+
+.right {
+	text-align: right !important;
+}
+
+.center {
+	text-align: center !important;
+}
+
+.axial th {
+	text-align: right;
+}
+
+.axial td th {
+	text-align: left;
+}
+
+body .stb {
+	margin-top: 1em;
+	text-indent: 0;
+}
+
+body .mtb {
+	margin-top: 2em;
+	text-indent: 0;
+}
+
+.courtesylinks {
+	margin-top: 1em;
+	padding-top: 1em;
+}
+
+dd {
+	margin-bottom: .67em;
+}
+
+.navgroup, .navgroup dt, .navgroup dd, .navgroup ul, .navgroup li {
+	margin: 0;
+	padding: 0;
+}
+
+.navgroup li {
+	display: block;
+}
+
+.navgroup {
+	margin-bottom: 6px;
+}
+
+.navgroup dd {
+	padding: 4px 4px 4px 0;
+}
+
+.navgroup dt {
+	padding: 4px;
+}
+
+.navgroup dl dt {
+	padding: 0;
+}
+
+.navgroup dd li, .navgroup dd div {
+	padding-bottom: .3em;
+	padding-left: 1em;
+}
+
+.navgroup dd li li {
+	margin-top: .3em;
+	padding-bottom: 0;
+}
+
+.tier1 {
+	margin-left: 0;
+}
+
+.tier2 {
+	margin-left: 1.5em;
+}
+
+.tier3 {
+	margin-left: 3em;
+}
+
+.tier4 {
+	margin-left: 4.5em;
+}
+
+.tier5 {
+	margin-left: 6em;
+}
+
+.tier6 {
+	margin-left: 7.5em;
+}
+
+.tier7 {
+	margin-left: 9em;
+}
+
+.tier8 {
+	margin-left: 10.5em;
+}
+
+.tier9 {
+	margin-left: 12em;
+}
+
+.tier10 {
+	margin-left: 13.5em;
+}
+
+.filebrowse .expanded, .filebrowse .collapsed {
+	padding-left: 18px;
+}
+
+.filebrowse .leafnode, .filebrowse .leaf {
+	padding-left: 20px;
+}
+
+.filebrowse-alt .expanded, .filebrowse-alt .collapsed, .filebrowse-alt .leaf, .filebrowse-alt .leafnode, .expandedwaste, .collapsedwaste, .sortup, .sortdown {
+	/* hide from macie5\*/
+	float: left;
+	/* resume */
+	display: inline-block;
+	height: 15px;
+	width: 18px;
+	padding-left: 0 !important;
+}
+
+.filebrowse-alt .leaf, .filebrowse-alt .leafnode, .sortup, .sortdown {
+	width: 20px;
+}
+
+.filebrowse ul, .filebrowse-alt ul {
+	list-style-type: none;
+	padding-left: 0;
+	margin-left: 0;
+}
+
+.filebrowse ul ul, .filebrowse-alt ul ul {
+	margin-left: 1.5em;
+	margin-top: 0;
+	padding-top: .67em;
+}
+
+.filebrowse li, .filebrowse-alt li {
+	margin-bottom: .67em;
+}
+
+td.filebrowse h3 {
+	margin-top: 0;
+}
+
+.errormessage, .warningmessage, .donemessage, .infomessage, .docinfo, .dirinfo {
+	margin: .67em 0;
+	padding: .33em 0 .67em 42px;
+	min-height: 32px;
+}
+
+.errormark, .warningmark, .donemark, .infomark {
+	padding-left: 20px;
+	min-height: 15px;
+}
+
+.alt {
+	display: none;
+}
+
+#banner h2 {
+	margin: 0;
+}
+
+#navcol {
+	width: 14em;
+}
+
+.axial th, .axial th .strut, #navcol .strut {
+	width: 12em;
+}
+
+#breadcrumbs {
+	padding: 2px 8px;
+}
+
+h2, h3, h4 {
+	clear: both;
+}
+
+.legend {
+	float: right;
+}
+
+.legend th, .bars th {
+	text-align: right;
+	padding-left: 1em;
+}
+
+.bars table {
+	table-layout: fixed;
+}
+
+.bars th {
+	width: 12em;
+}
+
+.h2 h2, .h3 h3, .h4 h4 {
+	margin: 0;
+	padding: 0 4px;
+	position: relative;
+	top: -.75em;
+	background-color: #fff;
+	display: inline;
+	left: 0;
+}
+
+.tabset .h3 h3, .tabset .h4 h4 {
+	background-color: #ddd;
+}
+
+.h2, .h3, .h4 {
+	border-top: 2px solid #666;
+	border-left: 1px solid #ccc;
+	margin: 1.5em 0 .67em;
+	padding: 0 0 .5em .75em;
+}
+
+.h3, .h4 {
+	border-top: 1px solid #666;
+	border-left: none;
+}
+
+.h4 h4 {
+	font-weight: normal;
+}
+
+fieldset {
+	padding: .67em;
+}
+
+.tabset {
+	padding: .67em;
+	background-color: #ddd;
+	border-bottom: 1px solid #999;
+	border-right: 1px solid #999;
+}
+
+.tabset .a td, .tabset .axial th {
+	background-color: #bbb;
+}
+
+.tabset .a td {
+	background-color: #efefef;
+}
+
+.tabset .b td {
+	background-color: #ddd;
+}
+
+.tabset .functnbar3 {
+	background-image: none;
+}
+
+.colbar {
+	margin: 2px;
+	padding: 2px;
+}
+
+.axial td input {
+	font-weight: bold;
+}
+
+.axial th {
+	font-weight: normal;
+}
+
+.axial th em {
+	font-weight: bold;
+	font-style: normal;
+}
+
+caption {
+	font-size: x-small;
+	text-align: left;
+}
+
+caption em {
+	font-weight: bold;
+	font-style: normal;
+}
+
+#helptext {
+	background-color: #ffc;
+}
+
+#helptext dt {
+	border-bottom: 1px solid #996;
+	border-right: 1px solid #996;
+	background-color: #cc9;
+}
+
+#helptext dd {
+	border-bottom: 1px solid #cc9;
+	border-right: 1px solid #cc9;
+}
+
+#mytools dt, #projecttools dt, #admintools dt, #communitytools dt {
+	background-color: #ddd;
+	border: none;
+}
+
+.navgroup dl dt {	background-color: #fff !important;
+}
+
+.navgroup dl dd {	border: none !important;
+}
+
+
+#mytools dd, #projecttools dd, #admintools dd, #communitytools dd {
+	background-color: #fff;
+	border-right: none;
+	border-bottom: none;
+	border-top: 1px solid #999;
+}
+
+#mytools, #projecttools, #admintools, #communitytools {
+	background-color: #ddd;
+	border-right: 1px solid #666;
+	border-bottom: 1px solid #666;
+}
+
+#mytools dd, #projecttools dd, #admintools dd, #communitytools dd {
+	padding-top: .33em;
+}
+
+#mytools, #projecttools, #admintools, #communitytools {
+	padding: 0 6px 6px 6px;
+	margin: -4px 0 6px -4px;
+}
+
+#mytools dt, #projecttools dt, #admintools dt, #communitytools dt {
+	padding-left: 2px;
+}
+
+.navgroup dl dt {
+	padding-left: 0 !important;
+}
+
+
+#toptabs {
+	border-bottom: 4px solid #ddd;
+}
+#toptabs th, #toptabs td {
+	background-image: none;
+	border: 1px solid #fff;
+	border-bottom: none
+	margin: 0 3px
+}
+
+a.expanded, a.collapsed { border-bottom: none }
+
+#banner, #toptabs {
+	background-color: #fff
+}
+
+#topmodule {
+	background-color: #ddd;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #aaa;
+}
+
+#topmodule #issueid {
+	border-right: 1px solid #aaa;
+}
+
+#topmodule {margin: -4px -4px 0 -8px }
+
+#topmodule td {
+	vertical-align: middle;
+	padding: 2px 8px;
+}
+#footer { padding-left: 8px }

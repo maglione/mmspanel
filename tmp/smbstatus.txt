@@ -1,0 +1,281 @@
+Samba version 3.0.14a-Debian
+PID     Username      Group         Machine
+-------------------------------------------------------------------
+16574   dandarah      execucao      dandarah0    (192.168.1.29)
+16342   jane          execucao      jane0        (192.168.1.43)
+16466   flavio        execucao      flavio0      (192.168.1.50)
+16282   edmilson      consult       edmilson0    (192.168.1.47)
+16423   luis          execucao      luis0        (192.168.1.13)
+16962   jair          consult       jair0        (192.168.1.44)
+16537   anamaria      juridico      anamaria0    (192.168.1.9)
+17374   hevelcio      consult       hevelcio0    (192.168.1.32)
+16413   daniel        nobody        daniel0      (192.168.1.41)
+16286   lucas         execucao      lucas0       (192.168.1.46)
+18289   mauro         admins        mauro0       (192.168.1.7)
+16558   priscila      admins        priscila0    (192.168.1.37)
+18564   paulo         juridico      paulo0       (192.168.1.19)
+
+Service      pid     machine       Connected at
+-------------------------------------------------------
+Dinamica     18289   mauro0        Thu May 10 13:36:28 2007
+Shared       17374   hevelcio0     Thu May 10 10:44:55 2007
+Shared       16537   anamaria0     Thu May 10 09:04:17 2007
+Backup       18289   mauro0        Thu May 10 13:37:46 2007
+Dinamica     17374   hevelcio0     Thu May 10 10:44:55 2007
+priscila     16558   priscila0     Thu May 10 09:10:39 2007
+install      17374   hevelcio0     Thu May 10 10:44:55 2007
+install      16537   anamaria0     Thu May 10 09:04:17 2007
+Dimensao     16466   flavio0       Thu May 10 09:00:39 2007
+install      16423   luis0         Thu May 10 08:37:59 2007
+Patentes     18564   paulo0        Thu May 10 14:31:56 2007
+edmilson     16282   edmilson0     Thu May 10 07:31:47 2007
+Patentes     16342   jane0         Thu May 10 08:03:03 2007
+Execucao     16962   jair0         Thu May 10 10:07:19 2007
+Execucao     16282   edmilson0     Thu May 10 07:31:54 2007
+Execucao     16423   luis0         Thu May 10 08:37:58 2007
+Execucao     16558   priscila0     Thu May 10 09:10:48 2007
+Shared       16574   dandarah0     Thu May 10 09:13:35 2007
+jair         16962   jair0         Thu May 10 10:07:12 2007
+Dinamica     16962   jair0         Thu May 10 10:07:19 2007
+Dinamica     16574   dandarah0     Thu May 10 09:13:35 2007
+Dinamica     16466   flavio0       Thu May 10 09:00:38 2007
+Patentes     16286   lucas0        Thu May 10 07:33:23 2007
+install      16574   dandarah0     Thu May 10 09:13:35 2007
+IPC$         18564   paulo0        Thu May 10 15:56:27 2007
+Dimensao     16342   jane0         Thu May 10 08:03:03 2007
+Execucao     16413   daniel0       Thu May 10 08:33:34 2007
+Juridico     18564   paulo0        Thu May 10 14:31:56 2007
+lucas        16286   lucas0        Thu May 10 07:33:01 2007
+mauro        18289   mauro0        Thu May 10 13:36:25 2007
+Patentes     16537   anamaria0     Thu May 10 09:04:17 2007
+Dimensao     18289   mauro0        Thu May 10 13:37:46 2007
+Execucao     18289   mauro0        Thu May 10 13:36:29 2007
+Dimensao     16286   lucas0        Thu May 10 07:33:24 2007
+Dinamica     18564   paulo0        Thu May 10 14:31:55 2007
+Execucao     17374   hevelcio0     Thu May 10 10:44:55 2007
+daniel       16413   daniel0       Thu May 10 08:33:24 2007
+Shared       16466   flavio0       Thu May 10 09:00:39 2007
+Shared       16558   priscila0     Thu May 10 09:10:55 2007
+IPC$         16558   priscila0     Thu May 10 16:56:48 2007
+Dimensao     18564   paulo0        Thu May 10 14:31:56 2007
+install      16466   flavio0       Thu May 10 09:00:39 2007
+Shared       18289   mauro0        Thu May 10 13:37:46 2007
+hevelcio     17374   hevelcio0     Thu May 10 10:44:40 2007
+Shared       16342   jane0         Thu May 10 08:03:04 2007
+Dinamica     16286   lucas0        Thu May 10 07:33:23 2007
+install      18289   mauro0        Thu May 10 13:37:46 2007
+Execucao     16574   dandarah0     Thu May 10 09:13:35 2007
+Execucao     16466   flavio0       Thu May 10 09:00:38 2007
+Dimensao     16962   jair0         Thu May 10 10:07:19 2007
+html         16558   priscila0     Thu May 10 09:10:49 2007
+Dimensao     16282   edmilson0     Thu May 10 07:31:54 2007
+Patentes     16423   luis0         Thu May 10 08:37:58 2007
+Execucao     18564   paulo0        Thu May 10 14:31:55 2007
+install      16558   priscila0     Thu May 10 09:10:55 2007
+Patentes     16558   priscila0     Thu May 10 09:10:49 2007
+Dinamica     16537   anamaria0     Thu May 10 09:04:17 2007
+Shared       16286   lucas0        Thu May 10 07:33:25 2007
+Juridico     16537   anamaria0     Thu May 10 09:04:17 2007
+install      16342   jane0         Thu May 10 08:03:04 2007
+Dimensao     16413   daniel0       Thu May 10 08:33:34 2007
+Dinamica     16342   jane0         Thu May 10 08:03:02 2007
+Dimensao     17374   hevelcio0     Thu May 10 10:44:55 2007
+Shared       18564   paulo0        Thu May 10 14:31:57 2007
+Dimensao     16423   luis0         Thu May 10 08:37:59 2007
+luis         16423   luis0         Thu May 10 08:37:51 2007
+Execucao     16286   lucas0        Thu May 10 07:33:23 2007
+Execucao     16342   jane0         Thu May 10 08:03:02 2007
+html         18289   mauro0        Thu May 10 13:36:30 2007
+anamaria     16537   anamaria0     Thu May 10 09:04:12 2007
+install      16286   lucas0        Thu May 10 07:33:25 2007
+Shared       16962   jair0         Thu May 10 10:07:20 2007
+Dimensao     16537   anamaria0     Thu May 10 09:04:17 2007
+Shared       16282   edmilson0     Thu May 10 07:31:55 2007
+IPC$         16537   anamaria0     Thu May 10 16:52:53 2007
+Dinamica     16282   edmilson0     Thu May 10 07:31:54 2007
+install      16962   jair0         Thu May 10 10:07:20 2007
+Dinamica     16423   luis0         Thu May 10 08:37:57 2007
+Dimensao     16574   dandarah0     Thu May 10 09:13:35 2007
+install      18564   paulo0        Thu May 10 14:31:57 2007
+Dinamica     16558   priscila0     Thu May 10 09:10:48 2007
+paulo        18564   paulo0        Thu May 10 14:31:54 2007
+Patentes     18289   mauro0        Thu May 10 13:36:29 2007
+Execucao     16537   anamaria0     Thu May 10 09:04:17 2007
+Shared       16413   daniel0       Thu May 10 08:33:35 2007
+Shared       16423   luis0         Thu May 10 08:37:59 2007
+Dinamica     16413   daniel0       Thu May 10 08:33:34 2007
+Patentes     16466   flavio0       Thu May 10 09:00:39 2007
+jane         16342   jane0         Thu May 10 08:02:48 2007
+install      16282   edmilson0     Thu May 10 07:31:54 2007
+IPC$         16423   luis0         Thu May 10 16:53:44 2007
+Dimensao     16558   priscila0     Thu May 10 09:10:55 2007
+install      16413   daniel0       Thu May 10 08:33:35 2007
+flavio       16466   flavio0       Thu May 10 09:00:20 2007
+Backup       16558   priscila0     Thu May 10 09:10:55 2007
+
+Locked files:
+Pid    DenyMode   Access      R/W        Oplock           Name
+--------------------------------------------------------------
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/PAIS.CDX   Thu May 10 16:21:52 2007
+18564  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/juridico/Depto. Dr. Paulo/NOTIFICAÇÕES/Notificação (keeps) mXn.fantasia.doc   Thu May 10 16:42:22 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/HIST_CT.DBF   Thu May 10 16:21:53 2007
+16423  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/usuarios/luis/Pendecias.xls   Thu May 10 14:01:57 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/CL  IENTE.CDX   Thu May 10 16:21:52 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/CORRES.FPT   Thu May 10 16:21:53 2007
+16423  DENY_NONE  0x200a9     RDONLY     NONE             /rede/dinamica/SPI_WIN/FOXW2600.ESL   Thu May 10 15:57:46 2007
+16558  DENY_NONE  0x200a9     RDONLY     NONE             /rede/dinamica/SPI_WIN/FOXW2600.ESL   Thu May 10 15:51:05 2007
+16342  DENY_NONE  0x200a9     RDONLY     NONE             /rede/dinamica/SPI_WIN/FOXW2600.ESL   Thu May 10 11:22:11 2007
+16574  DENY_NONE  0x200a9     RDONLY     NONE             /rede/dinamica/SPI_WIN/FOXW2600.ESL   Thu May 10 10:24:35 2007
+16466  DENY_NONE  0x200a9     RDONLY     NONE             /rede/dinamica/SPI_WIN/FOXW2600.ESL   Thu May 10 09:28:40 2007
+16413  DENY_NONE  0x200a9     RDONLY     NONE             /rede/dinamica/SPI_WIN/FOXW2600.ESL   Thu May 10 09:05:38 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CLIENTE.CDX   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CLIENTE.CDX   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CLIENTE.CDX   Thu May 10 11:22:44 2007
+16466  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CLIENTE.CDX   Thu May 10 11:09:11 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CLIENTE.CDX   Thu May 10 09:05:55 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CORRES.FPT   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CORRES.FPT   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CORRES.FPT   Thu May 10 11:22:45 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CORRES.FPT   Thu May 10 09:05:55 2007
+16466  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/HIST_M.FPT   Thu May 10 09:29:11 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/ADVOGADO.DBF   Thu May 10 16:21:52 2007
+16342  DENY_ALL   0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/FOXUSER.DBF   Thu May 10 16:21:36 2007
+16413  DENY_ALL   0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dinamica/SPI_WIN/FOXUSER.FPT   Thu May 10 09:05:39 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/HIST_CT.CDX   Thu May 10 16:21:53 2007
+16466  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/HIST_M.CDX   Thu May 10 09:29:11 2007
+16342  DENY_WRITE 0xa1        RDONLY     LEVEL_II         /rede/dinamica/FINANCE3/Finance3.exe   Thu May 10 11:52:28 2007
+16423  DENY_WRITE 0xa1        RDONLY     LEVEL_II         /rede/dinamica/FINANCE3/Finance3.exe   Thu May 10 10:46:15 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/TITULAR.FPT   Thu May 10 16:21:52 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/SETUP.FPT   Thu May 10 16:21:52 2007
+16423  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/usuarios/luis/CONTROLE/ORDEM DE SERVIÇO.xls   Thu May 10 16:11:03 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/CORRES.DBF   Thu May 10 16:21:53 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/BLOQCOD.DBF   Thu May 10 16:21:53 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/CONTACLI.DBF   Thu May 10 16:21:53 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/ADVOGADO.CDX   Thu May 10 16:21:52 2007
+16342  DENY_WRITE 0x20189     RDONLY     EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/SPI_WIN.EXE   Thu May 10 16:21:37 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/HIST_CT.FPT   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/HIST_CT.FPT   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/HIST_CT.FPT   Thu May 10 11:22:45 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/HIST_CT.FPT   Thu May 10 09:05:55 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/SETUP.FPT   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/SETUP.FPT   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/SETUP.FPT   Thu May 10 11:22:45 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/SETUP.FPT   Thu May 10 09:05:55 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CORRES.DBF   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CORRES.DBF   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CORRES.DBF   Thu May 10 11:22:45 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CORRES.DBF   Thu May 10 09:05:55 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CLIENTE.DBF   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CLIENTE.DBF   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CLIENTE.DBF   Thu May 10 11:22:44 2007
+16466  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CLIENTE.DBF   Thu May 10 11:09:11 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CLIENTE.DBF   Thu May 10 09:05:55 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/TITULAR.CDX   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/TITULAR.CDX   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/TITULAR.CDX   Thu May 10 11:22:45 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/TITULAR.CDX   Thu May 10 09:05:55 2007
+16342  DENY_WRITE 0x20        RDONLY     LEVEL_II         /rede/dinamica/FINANCE3/libmysql40.dll   Thu May 10 11:52:29 2007
+16423  DENY_WRITE 0x20        RDONLY     LEVEL_II         /rede/dinamica/FINANCE3/libmysql40.dll   Thu May 10 10:46:16 2007
+16342  DENY_WRITE 0x200a9     RDONLY     EXCLUSIVE+BATCH  /rede/dinamica/SPI_WIN/FOXFONT.850   Thu May 10 16:21:36 2007
+16413  DENY_ALL   0x2019f     RDWR       LEVEL_II         /rede/dinamica/SPI_WIN/FOXUSER.DBF   Thu May 10 09:05:39 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/TITULAR.DBF   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/TITULAR.DBF   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/TITULAR.DBF   Thu May 10 11:22:45 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/TITULAR.DBF   Thu May 10 09:05:55 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/SENHAS.DBF   Thu May 10 15:58:16 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/SENHAS.DBF   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/SENHAS.DBF   Thu May 10 11:22:45 2007
+16466  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/SENHAS.DBF   Thu May 10 11:09:12 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/SENHAS.DBF   Thu May 10 09:05:55 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/HIST_CT.DBF   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/HIST_CT.DBF   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/HIST_CT.DBF   Thu May 10 11:22:45 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/HIST_CT.DBF   Thu May 10 09:05:55 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/SETUP.DBF   Thu May 10 16:21:52 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/SETUP.DBF   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/SETUP.DBF   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/SETUP.DBF   Thu May 10 11:22:45 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/SETUP.DBF   Thu May 10 09:05:55 2007
+16423  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/usuarios/luis/SALARIOS/SALARIOS/Maio. 07 Salar..xls   Thu May 10 16:47:13 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/CORRES.CDX   Thu May 10 16:21:53 2007
+16423  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/usuarios/luis/CONTROLE/MAI 07.xls   Thu May 10 16:57:17 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/BLOQCOD.CDX   Thu May 10 16:21:53 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/CONTACLI.CDX   Thu May 10 16:21:53 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CONTACLI.CDX   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CONTACLI.CDX   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CONTACLI.CDX   Thu May 10 11:22:45 2007
+16466  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CONTACLI.CDX   Thu May 10 11:09:12 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CONTACLI.CDX   Thu May 10 09:05:55 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/PAIS.FPT   Thu May 10 16:21:52 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/PAIS.FPT   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/PAIS.FPT   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/PAIS.FPT   Thu May 10 11:22:45 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/PAIS.FPT   Thu May 10 09:05:55 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/SENHAS.DBF   Thu May 10 16:21:53 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/usuarios/jane/Meus documentos/ControleDepCC.xls   Thu May 10 11:38:53 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/ADVOGADO.CDX   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/ADVOGADO.CDX   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/ADVOGADO.CDX   Thu May 10 11:22:45 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/ADVOGADO.CDX   Thu May 10 09:05:55 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/HIST_CT.CDX   Thu May 10 15:58:16 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/HIST_CT.CDX   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/HIST_CT.CDX   Thu May 10 11:22:45 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/HIST_CT.CDX   Thu May 10 09:05:55 2007
+16342  DENY_WRITE 0x20        RDONLY     LEVEL_II         /rede/dinamica/FINANCE3/borlndmm.dll   Thu May 10 11:52:28 2007
+16423  DENY_WRITE 0x20        RDONLY     LEVEL_II         /rede/dinamica/FINANCE3/borlndmm.dll   Thu May 10 10:46:15 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CONTACLI.DBF   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CONTACLI.DBF   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CONTACLI.DBF   Thu May 10 11:22:45 2007
+16466  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CONTACLI.DBF   Thu May 10 11:09:12 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CONTACLI.DBF   Thu May 10 09:05:55 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/TITULAR.FPT   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/TITULAR.FPT   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/TITULAR.FPT   Thu May 10 11:22:45 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/TITULAR.FPT   Thu May 10 09:05:55 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/PAIS.DBF   Thu May 10 16:21:52 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/PAIS.DBF   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/PAIS.DBF   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/PAIS.DBF   Thu May 10 11:22:45 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/PAIS.DBF   Thu May 10 09:05:55 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/usuarios/jane/Meus documentos/CONTROLECAIXA.DOC.xls   Thu May 10 11:44:52 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CLIENTE.FPT   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CLIENTE.FPT   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CLIENTE.FPT   Thu May 10 11:22:44 2007
+16466  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CLIENTE.FPT   Thu May 10 11:09:11 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CLIENTE.FPT   Thu May 10 09:05:55 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/CLIENTE.FPT   Thu May 10 16:21:52 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/TITULAR.DBF   Thu May 10 16:21:52 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/HIST_CT.FPT   Thu May 10 16:21:53 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/BLOQCOD.DBF   Thu May 10 15:58:16 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/BLOQCOD.DBF   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/BLOQCOD.DBF   Thu May 10 11:22:45 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/BLOQCOD.DBF   Thu May 10 09:05:55 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/PAIS.CDX   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/PAIS.CDX   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/PAIS.CDX   Thu May 10 11:22:45 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/PAIS.CDX   Thu May 10 09:05:55 2007
+16423  DENY_WRITE 0x20189     RDONLY     NONE             /rede/dinamica/SPI_WIN/SPI_WIN.EXE   Thu May 10 15:57:59 2007
+16558  DENY_WRITE 0x20189     RDONLY     NONE             /rede/dinamica/SPI_WIN/SPI_WIN.EXE   Thu May 10 15:51:18 2007
+16342  DENY_WRITE 0x20189     RDONLY     NONE             /rede/dinamica/SPI_WIN/SPI_WIN.EXE   Thu May 10 11:22:24 2007
+16574  DENY_WRITE 0x20189     RDONLY     NONE             /rede/dinamica/SPI_WIN/SPI_WIN.EXE   Thu May 10 10:24:48 2007
+16466  DENY_WRITE 0x20189     RDONLY     NONE             /rede/dinamica/SPI_WIN/SPI_WIN.EXE   Thu May 10 09:28:53 2007
+16413  DENY_WRITE 0x20189     RDONLY     NONE             /rede/dinamica/SPI_WIN/SPI_WIN.EXE   Thu May 10 09:05:39 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CORRES.CDX   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CORRES.CDX   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CORRES.CDX   Thu May 10 11:22:45 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/CORRES.CDX   Thu May 10 09:05:55 2007
+16466  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/HIST_M.DBF   Thu May 10 09:29:11 2007
+18564  DENY_NONE  0x2019f     RDWR       NONE             /rede/juridico/Depto. Dr. Paulo/NOTIFICAÇÕES/Notificação (casa das alianças) mXn.fantasia.doc   Thu May 10 16:52:29 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/CLIENTE.DBF   Thu May 10 16:21:52 2007
+16423  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/usuarios/luis/SALARIOS/SALARIOS/Abr. 07 Salar..xls   Thu May 10 16:54:05 2007
+16342  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/TITULAR.CDX   Thu May 10 16:21:52 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/BLOQCOD.CDX   Thu May 10 15:58:16 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/BLOQCOD.CDX   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/BLOQCOD.CDX   Thu May 10 11:22:45 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/BLOQCOD.CDX   Thu May 10 09:05:55 2007
+18564  DENY_NONE  0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/juridico/Depto. Dr. Paulo/NOTIFICAÇÕES/~WRL2574.tmp   Thu May 10 16:51:26 2007
+16342  DENY_ALL   0x2019f     RDWR       EXCLUSIVE+BATCH  /rede/dimensao/SPI_WIN/FOXUSER.FPT   Thu May 10 16:21:37 2007
+16423  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/ADVOGADO.DBF   Thu May 10 15:58:15 2007
+16574  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/ADVOGADO.DBF   Thu May 10 15:13:01 2007
+16342  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/ADVOGADO.DBF   Thu May 10 11:22:45 2007
+16413  DENY_NONE  0x2019f     RDWR       NONE             /rede/dinamica/SPI_WIN/ADVOGADO.DBF   Thu May 10 09:05:55 2007

@@ -1,0 +1,87 @@
+<h4>
+<img src="{sys_theme_dir}/images/crystalsvg/32x32/actions/identity.png" style="margin-right:0.2em;">
+User Accounts</h4>
+<div>
+<form name="head_form" action="list">  <!-- search by default -->
+<input type="hidden" name="id" value=""/>
+<input type="text" name="pattern" value="">&nbsp;
+
+<img src="{sys_theme_dir}/images/crystalsvg/16x16/actions/viewmag.png">&nbsp;
+<a href="#" onclick="document.head_form.submit();">Search</a>&nbsp;
+
+<img src="{sys_theme_dir}/images/crystalsvg/16x16/actions/clear_left.png">&nbsp;
+<a href="list?id=&page=1&pattern=">View all</a>
+
+<img src="{sys_theme_dir}/images/crystalsvg/16x16/actions/identity.png" style="margin-left:1.5em;margin-right:0.2em;">
+<a href="new">Add account...</A>
+
+<img src="{sys_theme_dir}/images/crystalsvg/16x16/actions/no.png" style="margin-left:1.5em;margin-right:0.2em;">
+<a href="#" onclick="confirmSubmit('remove', 'Are you sure ?');">Remove</A>
+
+<script type="text/javascript" language="javascript">
+function confirmSubmit(cmd) {
+  document.listForm.action = cmd;
+  var result;
+  result = confirm('Are you sure ?');
+  if (result == true) {
+    document.listForm.submit();
+  }   
+}
+</script>
+
+</form>
+
+</div>
+<br>
+
+<form name="listForm" action="list">  <!-- search by default -->
+<table class="log" width="100%">
+
+<tr>
+<th style="width: 8em">Username</th>
+<th>Full Name</th>
+<th>Description</th>
+<th style="width: 1em"></th>
+</tr>
+
+<tr>
+<!-- <td><a href='edit?uid=root'>root</a></td> -->
+<td><a href="edit?dn=uid=root,ou=Users,dc=maglione,dc=com,dc=br">root</a></td>
+<td>root</td>
+<td>Netbios Domain Administrator</td>
+<td><input type="checkbox" name="selection1" value="uid=root,ou=Users,dc=maglione,dc=com,dc=br"/></td>
+</tr>
+
+<tr>
+<!-- <td><a href='edit?uid=nobody'>nobody</a></td> -->
+<td><a href="edit?dn=uid=nobody,ou=Users,dc=maglione,dc=com,dc=br">nobody</a></td>
+<td>nobody</td>
+
+<td></td>
+<td><input type="checkbox" name="selection2" value="uid=nobody,ou=Users,dc=maglione,dc=com,dc=br"/></td>
+</tr>
+
+<tr>
+<!-- <td><a href='edit?uid=daniel'>daniel</a></td> -->
+<td><a href="edit?dn=uid=daniel,ou=Users,dc=maglione,dc=com,dc=br">daniel</a></td>
+<td>Daniel Maglione</td>
+<td>Daniel Maglione</td>
+<td><input type="checkbox" name="selection3" value="uid=daniel,ou=Users,dc=maglione,dc=com,dc=br"/></td>
+</tr>
+
+<tr>
+<!-- <td><a href='edit?uid=teste'>teste</a></td> -->
+
+<td><a href="edit?dn=uid=teste,ou=Users,dc=maglione,dc=com,dc=br">teste</a></td>
+<td>Teste Maglione</td>
+<td>Teste Maglione</td>
+<td><input type="checkbox" name="selection4" value="uid=teste,ou=Users,dc=maglione,dc=com,dc=br"/></td>
+</tr>
+
+
+</table>
+
+</form>
+
+
+</div>

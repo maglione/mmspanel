@@ -1,0 +1,21 @@
+/usr/bin/nbtscan 192.168.1.0/24
+Doing NBT name scan for addresses from 192.168.1.0/24
+
+IP address       NetBIOS Name     Server    User             MAC address
+------------------------------------------------------------------------------
+192.168.1.0     Sendto failed: Permission denied
+192.168.1.1      SERVER           <server>  SERVER           00:00:00:00:00:00
+192.168.1.9      ANAMARIA0        <server>  <unknown>        00:0e:a6:b7:b6:18
+192.168.1.7      MAURO0           <server>  <unknown>        00:16:76:6f:b1:77
+192.168.1.13     LUIS0            <server>  <unknown>        00:e0:7d:a5:ae:fd
+192.168.1.19     PAULO0           <server>  <unknown>        00:40:05:9b:26:23
+192.168.1.29     DANDARAH0        <server>  <unknown>        00:11:2f:1e:b2:f7
+192.168.1.32     HEVELCIO0        <server>  <unknown>        00:11:d8:e2:6d:13
+192.168.1.37     PRISCILA0        <server>  <unknown>        00:0e:a6:49:d3:90
+192.168.1.41     DANIELA0         <server>  <unknown>        00:e0:7d:db:1a:14
+192.168.1.44     JAIR0            <server>  <unknown>        00:0a:e6:f0:8c:3f
+192.168.1.47     EDMILSON0        <server>  <unknown>        00:0a:e6:f0:c5:8e
+192.168.1.50     FLAVIO0          <server>  <unknown>        00:0c:6e:42:a3:da
+192.168.1.46     LUCAS0           <server>  <unknown>        00:0a:e6:1b:b4:f5
+192.168.1.43     JANE0            <server>  <unknown>        00:08:54:02:64:9f
+192.168.1.255   Sendto failed: Permission denied

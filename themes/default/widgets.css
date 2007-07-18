@@ -1,0 +1,267 @@
+.note {
+	font-size: 80%;
+	border-top: solid 1px #ccc;
+	text-align: right;
+}
+
+div.banner {background: #006ba3; color: #fff; padding-left: 5px; padding-bottom: 2px;}
+div.banner h1 {color: #fff;}
+
+.toolbox {
+	border: solid 1px #ccc;
+	padding: 5px;
+}
+
+.boxheader {
+	color: #000000;
+	background-color: #cccccc;
+	padding: 0.4em;
+	margin: 0;
+	font-style: normal;
+	font-size: 12px;
+}
+
+.toolbox ul, .toolbox li {
+	list-style: square;
+}
+.toolbox li {
+	margin: 0;
+	padding: 0;
+}
+.toolbox a {
+	display: block;
+	padding: 0.4em;
+	padding-left: 0;
+	padding-right: 0.6em;
+	background-color: #fff;
+	font-size: 12px;
+}
+
+.collapseBtn img {
+	content: url('/core/collapse.gif');
+	width: 18px;
+	height: 18px;
+	border: none;
+}
+
+#nav {
+	margin: 0.5em 0.2em 1em 0.2em;
+	padding: 0.2em;
+	line-height: 0;
+}
+#nav li {
+	list-style: none;
+	margin: 0 0 4px 0;
+
+	padding: 0 0 0 0;
+	line-height: 1.0;
+}
+#nav :link, #nav :visited {
+	font-weight: normal;
+	line-height: 1.0;
+	display: block;
+	text-decoration: none;
+	margin: 0;
+	padding: 5px 10px 5px 0.5em;
+}
+#nav :link:hover, #nav :visited:hover {
+	color: #335085;
+	background: #fff;
+}
+#nav :link:active, #nav :visited:active {
+	background: #fff;
+}
+#nav ul {
+	margin: 0;
+	padding: 0;
+	background-color: #eee;
+	border: solid 1px #fff;
+}
+#nav ul :link, #nav ul :visited {
+	background: #eee;
+	padding: 4px 4px 4px 1.5em;
+	border: 0;
+}
+#nav ul :link:hover, #nav ul :visited:hover, #nav .selected {
+	background: #fff;
+	# border: solid 1px #fff;
+}
+
+input.wizard {
+	padding: 2px;
+	width: 8em;
+}
+
+.errormsg {
+        font-size : 10px;
+        font-family : Verdana, Arial, Helvetica, sans-serif;
+        font-weight : normal;
+        padding-right: 2px;
+        padding-left: 2px;
+        padding-bottom: 0.8em;
+        padding-top:2px;
+        font-style: italic;
+        color: #FF0000;
+}
+
+
+/************** .feature styles ***************/
+
+.feature{
+	padding: 0px 0px 10px 10px;
+	font-size: 80%;
+}
+
+.feature h3{
+font-size: 160%;
+	padding: 30px 0px 5px 0px;
+}
+
+.feature img{
+	float: left;
+	padding: 10px 10px 0px 0px;
+}
+
+
+/************** .story styles *****************/
+
+.story{
+	clear: both;
+	padding: 10px 0px 0px 10px;
+	font-size: 80%;
+}
+
+.story p{
+	padding: 0px 0px 10px 0px;
+}
+
+
+/*********** .relatedLinks styles ***********/
+
+.relatedLinks{
+	margin: 0px;
+	padding: 0px 0px 10px 10px;
+	font-size: 90%;
+}
+
+.relatedLinks h3{
+	padding: 10px 0px 2px 0px;
+}
+
+.relatedLinks a:link,
+.relatedLinks a:visited {
+	display: block; 
+}
+
+.taskbox {
+	padding : 0;
+	margin: 0;
+}
+
+.taskbox p{
+	padding: 5px 0px 5px 0px;
+	margin: 0px;
+}
+
+
+#topic h4 {
+	padding-bottom: 0.2em;
+	border-bottom: solid 1px #ccc;
+}
+
+#topic ul li {
+	list-style-type: square;
+}
+
+.taskpad {
+	border: solid 1px #ccc;
+	padding: 5px;
+	margin: 10px;
+	width: 42%;
+	float: left;
+}
+.progress-bar {
+	height: 1em;
+	width: 8px;
+	// border: solid 1px #ccc;
+	background-image: url(greenbar.png);
+	background-repeat: no-repeat;
+	// background-position: .2em .2em;
+	vertical-align: bottom;
+}
+.progress-bar-void {
+	height: 1em;
+	width: 8px;
+	// border: solid 1px #ccc;
+	// background-image: url(/core/greenbar.png);
+	// background-repeat: no-repeat;
+	// background-position: .2em .2em;
+	vertical-align: bottom;
+}
+
+table.log {
+	text-align: left;
+	vertical-align: top;
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
+table.log th {
+	// background-color: #006ba3;
+	// color: #ffffff;
+	background-color: #ccc;
+	height: 2em;
+	padding: 0.3em;
+}
+
+table.log td {
+	padding: 4px;
+	border: 1px solid #ccc;
+	vertical-align: top;
+}
+
+.a td {
+	background: #ddd;
+}
+
+.b td {
+	background: #efefef;
+}
+
+.errormark, .warningmark, .donemark, .infomark {
+	padding-left: 20px;
+	min-height: 15px;
+	background: url(icon_error_sml.gif) no-repeat;
+}
+
+.warningmark {
+	background-image: url(icon_warning_sml.gif);
+}
+
+.donemark {
+	background-image: url(icon_success_sml.gif);
+}
+
+.infomark {
+	background-image: url(icon_info_sml.gif);
+}
+
+/*  tree style */
+.tree {
+  display:block;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+}
+.tree ul, .tree li {
+  list-style-type:none;
+  padding-left: 1em;
+  margin-bottom: 0.2em;
+}
+.tree ul {
+  display: none; /* hide trees by default */
+  list-style-type:none;
+}
+.tree li img {cursor:pointer; margin: 2px; vertical-align: text-bottom;}
+.tree a {display: inline;}

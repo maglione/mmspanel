@@ -1,0 +1,88 @@
+body,th,td,p,div,span,a,input,select,textarea,ul,ol,dl,h1,h2,h3,h4,h5,h6,li,big,small,blockquote{font-family:verdana,arial,helvetica,sans-serif}
+body,th,td,p,div,span,a,ul,ol,dl,li,select,input,textarea,blockquote{font-size:12px}
+body,th,td,p{color:#000}
+code,kbd,tt,pre,code a,kbd a,tt a,pre a,code span,kbd span,tt span,pre span{font-family:courier,"courier new";font-size:12px}
+code,kbd,tt,pre,code span,kbd span,tt span,pre span{color:#000}
+
+h5,h5 a,h6,h6 a,h5 span,h6 span{font-size:14px;color:#000}
+h1,h2,h3,h1 span,h2 span,h3 span,h1 a,h2 a,h3 a{font-size:17px;color:#000}
+h4,h4 span,h4 a{font-size:16px;color:#000}
+h1,h2,h3,h4,h5,h6{margin:4px 0px;padding:0px}
+
+h1 {font-size: 120%}
+h2 {font-size: 114%}
+
+img{border: 0px}
+a{text-decoration:none}
+a:visited{color:#000}
+a:link,a.named:visited {color:#000}
+a:hover {text-decoration:underline}
+dt {font-weight:bold;padding:5px 0px 0px 0px}
+
+ul li{list-style-type:square;}
+ul {list-style-type: square;}
+ul ul {list-style-type: disc;}
+ul ul ul {list-style-type: none;}
+
+hr {height:1px; color:#999999}
+img {vertical-align:middle;}
+
+.exemple { font-size: 80%; color:#666666 ; padding-left: 160px;}
+
+form {display:inline}
+form,select,input,textarea,ul li {margin:0px;padding:0px}
+fieldset {border: 1px solid #ccc}
+legend {color:#000000; font-weight:bold;}
+input {margin:2px 0 2px 0}
+/* label {width: 5em; display:block; float: left;	padding: 3px;} */
+label {width: 5em; padding: 3px;}
+
+/***********************************************************************************
+By Daniel Maglione
+************************************************************************************/
+
+.debug {
+  font-size: 12px;
+  color: #FFFFFF;
+  background-color: #000000;
+}
+
+pre {
+  font-size: 12px;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+.required {
+  color: #FF0000;
+  padding-right: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.reqnote {
+  color: #FF0000;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+span.error {
+  color : #FF0000;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+li {
+  list-style: none;
+}
+
+#black_panel {
+  font-family: "courier", "courier new";
+  font-size: 12px;
+  color:  #FFFFFF;
+  background-color: #000000;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> -->
+<html>
+  <head>
+    <title>MAGLIONE NetPanel</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="revisit-after" content="4" />
+    <meta name="description" content="{_(Server control panel)_}" />
+    <meta name="keywords" content="server, control panel, panel, samba, ldap, squid" />
+    <meta name="robots" content="none" />
+    <meta name="rating" content="General" />
+    <meta name="author" content="Daniel Maglione" />
+    <meta name="language" content="{_(en)_}" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="{sys_theme_dir}/default.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="{sys_theme_dir}/layout.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="{sys_theme_dir}/widgets.css" type="text/css" media="all" />
+    <!-- INICIO JS do HEAD -->
+    {outputJShead:h}
+    <!-- FIM JS do HEAD -->
+  </head>
+  <body>
+    <!-- INICIO do Corpo -->
+    <!-- <div id="lay_body_id"> -->
+      <flexy:include src="header.html" />
+      <div class="debug">
+        {outputDebug:h}
+      </div>
+      <table style="width:100%">
+        <tr>
+          <td id="menu">
+            {outputMenu:h}
+          </td>
+          <td style="vertical-align:top;">
+
+            <div id="header">
+              <table width="100%">
+                <tr>
+                  <td id="navbar">{outputTopMenu:h}</td>
+                  <td id="infobox">{outputDate:h}</td>
+                </tr>
+              </table>
+            </div>
+            <div id="content">
+              <div id="topic">
+                {outputBody:h}
+              </div>
+              <!-- spacer -->
+              <div style="height: 5em"></div>
+            </div>
+          </td>
+          <td style="width: 18em; vertical-align: top">
+            <p>
+              <img src="{sys_theme_dir}/images/server.png" alt="{outputDomain:h}">
+              <em>{_(Domain)_}</em> : {outputDomain:h}
+            </p>
+            <div id="tools">
+              {outputTools:h}
+            </div>
+            <br>
+          </td>
+        </tr>
+      </table>
+      <div id="footer">
+        <flexy:include src="footer.html" />
+      </div>
+  </body>
+</html>
+
+
+
+<!--
+
+
+
+
+
+
+
+
+
+
+
+
+      <div id="lay_error_id">
+        {outputError:h}
+      </div>
+-->
