@@ -32,7 +32,7 @@
  * @author     Greg Beaver <cellog@php.net>
  * @copyright  2004-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: Tokenizer.php,v 1.4 2006/10/24 04:18:14 cellog Exp $
+ * @version    CVS: $Id: Tokenizer.php,v 1.5 2007/06/22 14:58:30 ashnazg Exp $
  * @filesource
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
@@ -134,7 +134,7 @@ class phpDocumentor_XML_Beautifier_Tokenizer extends XML_Beautifier_Tokenizer
             $this->_pv_curline = $this->_wp->linenum;
             $word = $this->_wp->getWord();
 
-            if (0)//PHPDOCUMENTOR_DEBUG == true)
+            if (PHPDOCUMENTOR_DEBUG == true)
             {
                 echo "LAST: ";
                 echo "|" . $this->_pv_last_word;

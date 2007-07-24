@@ -30,7 +30,7 @@
  * @author     Greg Beaver <cellog@php.net>
  * @copyright  2001-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: Errors.inc,v 1.9.2.2 2007/04/02 18:22:51 ashnazg Exp $
+ * @version    CVS: $Id: Errors.inc,v 1.11 2007/04/09 17:12:02 ashnazg Exp $
  * @filesource
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
@@ -375,10 +375,17 @@ define("PDERROR_NESTED_INTERNAL", 76);
  */
 define("PDERROR_NOTODO_INCLUDE", 77);
 /**
+ *	warning triggered when a class or method hasn't got docblock
+ */
+define("PDERROR_UNDOCUMENTED_ELEMENT", 78);
+/**
+ * warning triggered when any of {@}property}}, {@}property-read}}, {@}property-write}}, or {@}method}} tag does not have name
+ */
+define("PDERROR_MISSING_PROPERTY_TAG_NAME", 79);
+/**
  * warning triggered when the PHP version being used has dangerous bug/behavior
  */
  define("PDERROR_DANGEROUS_PHP_BUG_EXISTS", 80);
-
 /**
  * Error messages for phpDocumentor parser warnings
  * @global array $GLOBALS['phpDocumentor_warning_descrip']
@@ -414,6 +421,8 @@ $GLOBALS['phpDocumentor_warning_descrip'] =
         PDERROR_NO_DOCBOOK_ID => 'Tutorial section %s "%s" has no id="{@id subsection}" tag ({@id} for refentry)',
         PDERROR_BEAUTIFYING_FAILED => 'Beautifying failed: %s',
         PDERROR_NOTODO_INCLUDE => '@todo on an include element is ignored (line %s, file %s)',
+        PDERROR_UNDOCUMENTED_ELEMENT => '%s "%s" has no %s-level DocBlock.',
+        PDERROR_MISSING_PROPERTY_TAG_NAME => '@%s magic tag does not have name, illegal. Ignoring tag "@%s %s %s"'
         );
 
 

@@ -31,7 +31,7 @@
  * @author     Gregory Beaver <cellog@php.net>
  * @copyright  2002-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: IntermediateParser.inc,v 1.19.2.1 2007/03/29 18:51:11 ashnazg Exp $
+ * @version    CVS: $Id: IntermediateParser.inc,v 1.20 2007/05/03 22:28:36 ashnazg Exp $
  * @filesource
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
@@ -53,7 +53,7 @@
  * $docblock parameter of the parserElement
  * descendant object.
  *  @author Gregory Beaver
- *  @version $Id: IntermediateParser.inc,v 1.19.2.1 2007/03/29 18:51:11 ashnazg Exp $
+ *  @version $Id: IntermediateParser.inc,v 1.20 2007/05/03 22:28:36 ashnazg Exp $
  *  @copyright 2002 Gregory Beaver
  *  @package     phpDocumentor
  */
@@ -246,6 +246,19 @@ class phpDocumentor_IntermediateParser
      * @tutorial phpDocumentor.howto.pkg#using.command-line.quiet
      */
     var $quietMode = false;
+
+    /**
+     * set in {@link Setup.inc.php} to the value of the undocumentedElementWarnings commandline
+     * option.
+     *
+     * If this option is true, warnings about certain elements (classes, methods) 
+     * that are not documented with DocBlocks will be shown while parsing,
+     * and will also be displayed in the errors.html page 
+     * (other documentation is unaffected)
+     * @var boolean
+     * @tutorial phpDocumentor.howto.pkg#using.command-line.undocumentedelements
+     */
+    var $undocumentedElementWarnings = false;
         
     /**
      * used to keep track of inheritance at the smartest level possible for a
@@ -654,6 +667,10 @@ class phpDocumentor_IntermediateParser
 
         if (empty($this->last))
         {
+			if ($this->undocumentedElementWarnings)
+            {
+                addWarning(PDERROR_UNDOCUMENTED_ELEMENT,'Method',$data->getName(),'method');
+            }        	
             if (isset($this->db_template))
             {
                 // use the docblock template
@@ -920,6 +937,10 @@ class phpDocumentor_IntermediateParser
         $this->data->clean = false;
         if (empty($this->last))
         {
+            if ($this->undocumentedElementWarnings)
+            {
+                addWarning(PDERROR_UNDOCUMENTED_ELEMENT,'Class',$data->getName(),'Class');
+            }
             if (isset($this->db_template))
             {
                 // use the docblock template
@@ -1414,8 +1435,18 @@ class phpDocumentor_IntermediateParser
      */
     function addPrivatePage($page, $path)
     {
+        /*
+         * if privatepages is still empty,
+         * we need to initialize it with an empty 
+         * path=>ParserData element, so that it has
+         * a top-level element... otherwise the setParent() call
+         * below will crap out.
+         */
+        if (count($this->privatepages) == 0) {
+            $this->privatepages[$path] = new ParserData();
+        }
         $this->privatepages[$path]->setParent($page);
-        if ($page->package != $GLOBALS['phpDocumentor_DefaultPackageName'])
+        if (isset($page->package) && $page->package != $GLOBALS['phpDocumentor_DefaultPackageName'])
         {
             if (!$this->privatepages[$path]->docblock)
             {
@@ -1473,11 +1504,11 @@ class phpDocumentor_IntermediateParser
      */
     function addUses($element, $path)
     {
-        if ($element->type == 'page')
+        if (isset($element->type) && $element->type == 'page')
         {
             $element = $this->pages[$element->path];
         }
-        if (!$this->parsePrivate && $element->docblock->hasaccess)
+        if (!$this->parsePrivate && isset($element->docblock->hasaccess) && $element->docblock->hasaccess)
         {
             $a =  $element->docblock->getKeyword('access');
             if (is_object($a) && $a->getString() == 'private') return;
@@ -1486,19 +1517,16 @@ class phpDocumentor_IntermediateParser
         {
             if (isset($this->pages[$path]))
             {
-//                if ($element->type == 'function' || $element->type == 'method')
+                $uses = $element->docblock->getKeyword('uses');
+                if ($uses)
                 {
-                    $uses = $element->docblock->getKeyword('uses');
-                    if ($uses)
+                    if (!is_array($uses)) $uses = array($uses);
+                    foreach($uses as $use)
                     {
-                        if (!is_array($uses)) $uses = array($uses);
-                        foreach($uses as $use)
-                        {
-                            if (!is_object($use)) continue;
-                            $el = $use->getSeeElement();
-                            $description = $use->getDescription();
-                            $this->uses[$el][] = array($element, $description);
-                        }
+                        if (!is_object($use)) continue;
+                        $el = $use->getSeeElement();
+                        $description = $use->getDescription();
+                        $this->uses[$el][] = array($element, $description);
                     }
                 }
             }
@@ -1506,19 +1534,16 @@ class phpDocumentor_IntermediateParser
         {
             if (isset($this->pages[$path]))
             {
-//                if ($element->type == 'function' || $element->type == 'method')
+                $uses = $element->docblock->getKeyword('uses');
+                if ($uses)
                 {
-                    $uses = $element->docblock->getKeyword('uses');
-                    if ($uses)
+                    if (!is_array($uses)) $uses = array($uses);
+                    foreach($uses as $use)
                     {
-                        if (!is_array($uses)) $uses = array($uses);
-                        foreach($uses as $use)
-                        {
-                            if (!is_object($use)) continue;
-                            $el = $use->getSeeElement();
-                            $description = $use->getDescription();
-                            $this->uses[$el][] = array($element, $description);
-                        }
+                        if (!is_object($use)) continue;
+                        $el = $use->getSeeElement();
+                        $description = $use->getDescription();
+                        $this->uses[$el][] = array($element, $description);
                     }
                 }
             }
@@ -1881,6 +1906,18 @@ class phpDocumentor_IntermediateParser
     function setQuietMode($quietMode)
     {
         $this->quietMode = $quietMode;
+    }
+
+    /**
+     * show warnings for undocumented elements
+     *
+     * If set to false, no warnings will be shown for undocumented elements.
+     * Useful for identifying classes and methods that haven't yet been documented.
+     * @param    bool $undocumentedElementWarnings
+     */
+    function setUndocumentedElementWarningsMode($undocumentedElementWarnings)
+    {
+        $this->undocumentedElementWarnings = $undocumentedElementWarnings;
     }
     
     /**

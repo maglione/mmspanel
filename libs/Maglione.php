@@ -39,6 +39,9 @@ if (HTTP_Session::isIdle()) {
 }
 HTTP_Session::updateIdle();
 
+# Reset errors
+$_SESSION['Errors'] = array();
+
 /**
 * The class MaglioneFramework provides an consistent PEAR environment
 * that easy the development of web applications
@@ -59,6 +62,7 @@ class MaglioneFramework {
   var $Auth;
   var $MenuArray;
   var $Filter;
+  var $Errors;
 
   /**
   * Constructor
@@ -162,15 +166,12 @@ class MaglioneFramework {
     $info = $obj->getUserInfo();
 
     if (DEBUG && $code != TRANSLATION2_ERROR_CANNOT_FIND_FILE) {
-      $Error  = '<style>#lay_error_id {visibility: visible;}</style>';
-      $Error .= '<span style=color:#cc0000>MSG:'.$msg.' CODE:'.$code.'</span>';
-      if ($info) {
-        $Error .= '<!-- DEBUG: ';
-        $Error .= htmlspecialchars($info);
-        $Error .= '-->';
-      }
+      $Error['msg'] = $msg;
+      $Error['code'] = $code;
+      $Error['info'] = htmlspecialchars($info);
+
+      $_SESSION['Errors'][] = $Error;
     }
-    echo ($Error);
     if ($action == 'die') die();
   }
 
@@ -593,6 +594,18 @@ class MaglioneFramework {
   function Draw()
   {
     global $Session;
+
+    if ( (DEBUG) && (@count($_SESSION['Errors']) > 0) ) {
+      $this->Template->outputErrors  =  "<pre>";
+      foreach ($_SESSION['Errors'] as $error) {
+        $this->Template->outputErrors .=  'Error (' . $error['code'] . ')<strong>: ' . $error['msg'] . "</strong>\n";
+        if ($error['info']) {
+          $this->Template->outputErrors .= 'Info: ' . $error['info'] . "\n";
+        }
+        $this->Template->outputErrors .= "\n";
+      }
+      $this->Template->outputErrors .=  "</pre>";
+    }
 
     if ($this->CheckAuth()) {
       if (! $this->Template->body) {

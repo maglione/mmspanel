@@ -31,7 +31,7 @@
  * @author     Gregory Beaver <cellog@php.net>
  * @copyright  2002-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: ProceduralPages.inc,v 1.4 2006/10/23 03:32:56 cellog Exp $
+ * @version    CVS: $Id: ProceduralPages.inc,v 1.5 2007/04/19 20:20:57 ashnazg Exp $
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
  * @since      1.1
@@ -42,9 +42,9 @@
  * This structure parses defines, functions, and global variables by file,
  * and then iterates over the elements to document conflicts.
  * @package phpDocumentor
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.1
- * @version $Id: ProceduralPages.inc,v 1.4 2006/10/23 03:32:56 cellog Exp $
+ * @version $Id: ProceduralPages.inc,v 1.5 2007/04/19 20:20:57 ashnazg Exp $
  */
 class ProceduralPages
 {

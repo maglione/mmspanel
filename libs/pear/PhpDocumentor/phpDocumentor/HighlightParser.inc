@@ -40,7 +40,7 @@
  * @author     Gregory Beaver <cellog@php.net>
  * @copyright  2002-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: HighlightParser.inc,v 1.12 2006/12/18 17:21:37 ashnazg Exp $
+ * @version    CVS: $Id: HighlightParser.inc,v 1.14 2007/06/22 14:58:30 ashnazg Exp $
  * @filesource
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
@@ -276,6 +276,10 @@ class phpDocumentor_HighlightParser extends phpDocumentorTParser
                                 'uses' => 'coreTagHandler',
                                 'var' => 'varTagHandler',
                                 'version' => 'coreTagHandler',
+                                'property' => 'propertyTagHandler',
+                                'property-read' => 'propertyTagHandler',
+                                'property-write' => 'propertyTagHandler',
+                                'method' => 'propertyTagHandler'
                             );
     /**#@-*/
     
@@ -398,7 +402,7 @@ class phpDocumentor_HighlightParser extends phpDocumentorTParser
             }
             // in wordparser, have to keep track of lines
 //            $this->publishEvent(PHPDOCUMENTOR_EVENT_NEWLINENUM, $this->_wp->linenum);
-            if (0)//PHPDOCUMENTOR_DEBUG == true)
+            if (PHPDOCUMENTOR_DEBUG == true)
             {
                 echo "LAST: ";
                 if (is_array($this->_pv_last_word))
@@ -1617,6 +1621,15 @@ class phpDocumentor_HighlightParser extends phpDocumentorTParser
     {
         $this->paramTagHandler($name, $value, false);
     }
+
+    /**
+     * Handles @property(-read or -write) and @method magic tags
+     */
+    function propertyTagHandler( $name, $value )
+    {
+        return $this->paramTagHandler( $name, $value, true );
+    }
+
     /**#@-*/
     
     /**

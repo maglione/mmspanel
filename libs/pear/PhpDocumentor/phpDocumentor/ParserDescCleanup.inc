@@ -34,7 +34,7 @@
  * @author     Gregory Beaver <cellog@php.net>
  * @copyright  2002-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: ParserDescCleanup.inc,v 1.10 2006/12/18 20:13:02 ashnazg Exp $
+ * @version    CVS: $Id: ParserDescCleanup.inc,v 1.12 2007/06/22 14:58:30 ashnazg Exp $
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
  * @see        Parser, WordParser
@@ -124,7 +124,7 @@ define('PHPDOCUMENTOR_PDP_STATE_SIMLIST',714);
 * {@link parserInlineTag}s
 * @package phpDocumentor
 * @subpackage WordParsers
-* @author Greg Beaver <cellog@users.sourceforge.net>
+* @author Greg Beaver <cellog@php.net>
 * @since 1.2
 */
 class ObjectWordParser extends WordParser
@@ -292,7 +292,7 @@ class ObjectWordParser extends WordParser
  * @tutorial phpDocumentor.howto.pkg#basics.desc
  * @package phpDocumentor
  * @subpackage Parsers
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.2
  */
 class parserDescParser extends Parser
@@ -405,7 +405,7 @@ class parserDescParser extends Parser
             $this->p_vars['last_word'] = $word;
             $word = $this->wp->getWord();
 
-            if (0)//PHPDOCUMENTOR_DEBUG == true)
+            if (PHPDOCUMENTOR_DEBUG == true)
             {
                 echo "----------------\n";
                 echo "LAST: |" . htmlentities($this->p_vars['last_word']) . "|\n";

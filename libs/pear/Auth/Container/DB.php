@@ -43,7 +43,7 @@ require_once 'DB.php';
  * @author     Adam Ashley <aashley@php.net>
  * @copyright  2001-2006 The PHP Group
  * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
- * @version    Release: 1.5.2  File: $Revision: 1.72 $
+ * @version    Release: 1.5.4  File: $Revision: 1.72 $
  * @link       http://pear.php.net/package/Auth
  */
 class Auth_Container_DB extends Auth_Container

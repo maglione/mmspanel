@@ -7,7 +7,7 @@
 // | Email         jeichorn@phpdoc.org, cellog@phpdoc.org                   |
 // | Web           http://www.phpdoc.org                                    |
 // | Mirror        http://phpdocu.sourceforge.net/                          |
-// | PEAR          http://pear.php.net/package-info.php?pacid=137           |
+// | PEAR          http://pear.php.net/package/PhpDocumentor                |
 // +------------------------------------------------------------------------+
 // | This source file is subject to version 3.00 of the PHP License,        |
 // | that is available at http://www.php.net/license/3_0.txt.               |
@@ -23,9 +23,9 @@
  * @package Converters
  * @subpackage XMLDocBook
  * @see parserDocBlock, parserInclude, parserPage, parserClass, parserDefine, parserFunction, parserMethod, parserVar
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.0
- * @version $Id: XMLDocBookConverter.inc,v 1.1 2005/10/17 18:37:36 jeichorn Exp $
+ * @version $Id: XMLDocBookConverter.inc,v 1.3 2007/04/19 20:20:57 ashnazg Exp $
  */
 /**
  * XML DocBook converter.
@@ -34,9 +34,9 @@
  * @package Converters
  * @subpackage XMLDocBook
  * @see parserDocBlock, parserInclude, parserPage, parserClass, parserDefine, parserFunction, parserMethod, parserVar
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.0
- * @version $Id: XMLDocBookConverter.inc,v 1.1 2005/10/17 18:37:36 jeichorn Exp $
+ * @version $Id: XMLDocBookConverter.inc,v 1.3 2007/04/19 20:20:57 ashnazg Exp $
  * @todo indexes for other DocBook converters not based on peardoc
  * @todo templates
  */

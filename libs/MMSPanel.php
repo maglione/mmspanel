@@ -1,12 +1,17 @@
 <?php
 /**
- * Maglione_NetPanel.php - Maglione Net Panel
- * 
+ * MMSPanel.php - MMSPanel
+ *
+ * LICENSE: This source file is subject to version 2.0 of GNU GENERAL PUBLIC LICENSE (GPL).
+ *          See the enclosed file COPYRIGHT for license information. If you did not receive 
+ *          this file, see http://www.gnu.org/licenses/gpl-2.0.txt.
+ *
+ * @package MMSPanel
  * @author Daniel Maglione <daniel@maglione.com.br>
  * @version 1.0
- * @package MaglioneNetPanel
- * @project MAGLIONE NetPanel
- * @copyright Maglione Informatica 2007
+ * @copyright 2007 - Daniel Maglione <daniel@maglione.com.br>
+ * @license   http://www.gnu.org/licenses/gpl-2.0.txt
+ * @project   MMSPanel
  */
 
 require_once 'Maglione.php';
@@ -39,8 +44,6 @@ class NetPanel extends MaglioneFramework {
     );
     $this->Ldap = Net_LDAP::connect($ldap_config);
 
-print_r($this->Ldap);
-
     $options = array(
                    'scope' => 'one',
                    'attributes' => array('sambaDomainName','sambaSID')
@@ -49,17 +52,21 @@ print_r($this->Ldap);
 
 
    $result = $search->entries();
-print_r($search);
 
-//    $this->SambaDomainName = trim($result[0]->getValue('sambadomainname','single'));
- //   $this->SambaSID = trim($result[0]->getValue('sambasid','single'));
+    $this->SambaDomainName = trim($result[0]->getValue('sambadomainname','single'));
+    $this->SambaSID = trim($result[0]->getValue('sambasid','single'));
 
     unset($this->MenuArray);
     $this->MenuArray = $this->_ReadModulesMenu();
 
     $this->Auth['Type'] = 'LDAP';
     $this->Auth['Options'] = array(
-      'url' => 'ldap://' . LDAP_HOST . ':' . LDAP_PORT . '/',
+      # 'url' => 'ldap://' . LDAP_HOST . ':' . LDAP_PORT . '/',
+      'host' => LDAP_HOST,
+      'port' => LDAP_PORT,
+      'version' => 3,
+      'binddn' => LDAP_BIND_USER,
+      'bindpw' => LDAP_BIND_PASS,
       'basedn' => LDAP_ROOT_DN,
       'userscope' => 'one',
       'userdn' => LDAP_USERS_OU,
@@ -68,8 +75,10 @@ print_r($search);
       'memberattr' => 'memberUid',
       'memberisdn' => false,
       'group' => 'Domain Admins',
-      'cryptType' => 'sha1'
+      'cryptType' => 'sha1',
+      'debug' => true
     );
+
   }
 
 ###############################################################################
@@ -126,6 +135,13 @@ print_r($search);
 ###############################################################################
 #                         ESPECIFIC PANEL FUNCTIONS                           #
 ###############################################################################
+
+  function Draw()
+  {
+    $this->Template->outputDomain = $this->SambaDomainName;
+
+    parent::Draw();
+  }
 
   function ExecuteExternalCommand($command, $output = null)
   {

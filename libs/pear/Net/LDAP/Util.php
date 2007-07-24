@@ -22,7 +22,7 @@
 // | Authors: Benedikt Hallinger                                              |
 // +--------------------------------------------------------------------------+
 //
-// $Id: Util.php,v 1.18 2007/06/20 10:51:21 beni Exp $
+// $Id: Util.php,v 1.19 2007/07/16 07:33:36 beni Exp $
 require_once "PEAR.php";
 
 
@@ -34,7 +34,7 @@ require_once "PEAR.php";
  *
  * @package Net_LDAP
  * @author Benedikt Hallinger <beni@php.net>
- * @version $Revision: 1.18 $
+ * @version $Revision: 1.19 $
  */
 class Net_LDAP_Util extends PEAR
 {
@@ -92,9 +92,9 @@ class Net_LDAP_Util extends PEAR
     */
     function ldap_explode_dn($dn, $options = array('casefold' => 'upper'))
     {
-        $options['onlyvalues'] == true ? $options['onlyvalues'] = 1 : $options['onlyvalues'] = 0;
-        !isset($options['reverse']) ? $options['reverse'] = false : $options['reverse'] = true;
-        if (!isset($options['casefold'])) $options['casefold'] = 'upper';
+        $options['onlyvalues'] == true ? $options['onlyvalues'] = 1     : $options['onlyvalues'] = 0;
+        $options['reverse'] == true    ? $options['reverse']    = false : $options['reverse']    = true;
+        if (!isset($options['casefold'])) $options['casefold']  = 'upper';
 
         // Escaping of DN and stripping of "OID."
         $dn = Net_LDAP_Util::canonical_dn($dn);

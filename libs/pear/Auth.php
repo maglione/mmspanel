@@ -18,7 +18,7 @@
  * @author     Adam Ashley <aashley@php.net>
  * @copyright  2001-2006 The PHP Group
  * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
- * @version    CVS: $Id: Auth.php,v 1.118 2007/06/12 03:11:26 aashley Exp $
+ * @version    CVS: $Id: Auth.php,v 1.119 2007/07/02 03:38:52 aashley Exp $
  * @link       http://pear.php.net/package/Auth
  */
 
@@ -69,7 +69,7 @@ define('AUTH_LOG_DEBUG',    7);
  * @author     Adam Ashley <aashley@php.net>
  * @copyright  2001-2006 The PHP Group
  * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
- * @version    Release: 1.5.2  File: $Revision: 1.118 $
+ * @version    Release: 1.5.4  File: $Revision: 1.119 $
  * @link       http://pear.php.net/package/Auth
  */
 class Auth {
@@ -634,6 +634,10 @@ class Auth {
     function setSessionName($name = 'session')
     {
         $this->_sessionName = '_auth_'.$name;
+        // Make Sure Auth session variable is there
+        if(!isset($_SESSION[$this->_sessionName])) {
+            $_SESSION[$this->_sessionName] = array();
+        }
         $this->session =& $_SESSION[$this->_sessionName];
     }
 

@@ -31,7 +31,7 @@
  * @author     Greg Beaver <cellog@php.net>
  * @copyright  2002-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: ParserPDF.inc,v 1.3 2006/04/30 22:18:14 cellog Exp $
+ * @version    CVS: $Id: ParserPDF.inc,v 1.5 2007/06/22 14:58:30 ashnazg Exp $
  * @filesource
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
@@ -62,7 +62,7 @@ define('PHPDOCUMENTOR_PDF_STATE_PDFFUNCTION', 704);
 /**
  * @package Converters
  * @subpackage PDFdefault
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.2
  */
 class PDFParser extends Parser
@@ -139,7 +139,7 @@ class PDFParser extends Parser
             $this->p_vars['last_word'] = $word;
             $word = $this->wp->getWord();
 
-            if (0)//PHPDOCUMENTOR_DEBUG == true)
+            if (PHPDOCUMENTOR_DEBUG == true)
             {
                 echo "----------------\n";
                 echo "LAST: |" . $this->p_vars['last_word'] . "|\n";

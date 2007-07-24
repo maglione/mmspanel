@@ -25,12 +25,11 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  *
- * @category   documentation
  * @package    phpDocumentor
  * @author     Gregory Beaver <cellog@php.net>
  * @copyright  2002-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: Setup.inc.php,v 1.21.2.7 2007/04/05 18:42:32 ashnazg Exp $
+ * @version    CVS: $Id: Setup.inc.php,v 1.25 2007/06/28 17:47:27 ashnazg Exp $
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
  * @since      1.2
@@ -146,6 +145,12 @@ class phpDocumentor_setup
      */
     var $ignore_files = array();
     /**
+     * contents of --ignoresymlinks commandline
+     * @var boolean
+     */
+    var $ignoresymlinks = false;
+
+    /**
      * Checks PHP version, makes sure it is 4.2.0+, and chooses the
      * phpDocumentorTParser if version is 4.3.0+
      * @uses parseIni()
@@ -179,11 +184,7 @@ class phpDocumentor_setup
         {
             phpDocumentor_out("time_limit cannot be set since your in safe_mode, please edit time_limit in your php.ini to allow enough time for phpDocumentor to run"); 
         }
-        $x = str_replace('M', '', ini_get('memory_limit'));
-        if ($x < 256) {
-            ini_set("memory_limit","256M");
-        }
-
+  
         $phpver = phpversion();
         $phpdocver = PHPDOCUMENTOR_VER;
         if (isset($_GET['interface'])) {
@@ -194,6 +195,7 @@ class phpDocumentor_setup
         phpDocumentor_out("phpDocumentor version $phpdocver\n\n");
 
         $this->parseIni();
+        $this->setMemoryLimit();
 
         if (tokenizer_ext)
         {
@@ -262,8 +264,14 @@ and load the tokenizer extension for faster parsing (your version is ".phpversio
         // set to parse hidden files
         $this->hidden = (isset($_phpDocumentor_setting['hidden'])) ? decideOnOrOff($_phpDocumentor_setting['hidden']) : false;
 
+        // set to parse through symlinks
+        $this->ignoresymlinks = (isset($_phpDocumentor_setting['ignoresymlinks'])) ? decideOnOrOff($_phpDocumentor_setting['ignoresymlinks']) : false;
+        
         // set to parse elements marked private with @access private
         $this->render->setParsePrivate((isset($_phpDocumentor_setting['parseprivate'])) ? decideOnOrOff($_phpDocumentor_setting['parseprivate']) : false);
+
+        // set to print warnings when undocumented elements are spotted
+        $this->render->setUndocumentedElementWarningsMode((isset($_phpDocumentor_setting['undocumentedelements'])) ? decideOnOrOff($_phpDocumentor_setting['undocumentedelements']) : false);
 
         if (isset($_phpDocumentor_setting['ignoretags']))
         {
@@ -385,7 +393,63 @@ and load the tokenizer extension for faster parsing (your version is ".phpversio
         return in_array($tagname, $_phpDocumentor_setting['ignoretags']);
     }
 
-     function setJavadocDesc()
+    /**
+     * Allow a memory_limit setting in phpDocumentor.ini to override php.ini or default memory limit
+     * @todo recognize "K" and "G" in memory_limit settings, rather than just "M"
+     */
+    function setMemoryLimit() {
+        global $_phpDocumentor_options;
+        $DEFAULT_MEMORY_SIZE_MINIMUM = 256;
+        
+        // PhpDoc memory_limit from phpDocumentor.ini overrides all other considerations
+        if (isset($_phpDocumentor_options['memory_limit'])) {
+            $phpdoc_ini_setting = str_replace('M', '', $_phpDocumentor_options['memory_limit']);
+
+            // allow phpdoc.ini to DISABLE the setting via "= -1"
+            if ($phpdoc_ini_setting == -1)
+            {
+                $memory_setting_to_use = $phpdoc_ini_setting;
+                $max_mem_log_message = "setting disabled by phpDocumentor.ini...\n";
+            }
+            else
+            {
+                $memory_setting_to_use = $phpdoc_ini_setting . "M";
+                $max_mem_log_message = "set at " . $memory_setting_to_use . " by phpDocumentor.ini...\n";
+            }
+        } else {
+            $php_ini_setting = str_replace('M', '', ini_get('memory_limit'));
+
+            // allow php.ini to DISABLE the setting via "= -1"
+            if ($php_ini_setting == -1)
+            {
+                // allow it to remain disabled
+                $memory_setting_to_use = $php_ini_setting;
+                $max_mem_log_message = "setting disabled by php.ini...\n";
+            }
+            else
+            {
+                // memory_limit from php.ini must be at least the default minimum
+                $memory_setting_to_use = ($php_ini_setting > $DEFAULT_MEMORY_SIZE_MINIMUM) ? $php_ini_setting . "M" : $DEFAULT_MEMORY_SIZE_MINIMUM . "M";
+                $max_mem_log_message = "set at " . $memory_setting_to_use . " after considering php.ini...\n";                
+            }
+        }
+        if (ini_set("memory_limit", $memory_setting_to_use))
+        {
+            // PHP had to have been compiled with "--enable-memory-limit" to allow setting the value explicitly
+            phpDocumentor_out("Maximum memory usage " . $max_mem_log_message);
+        }
+        else
+        {
+            // PHP must not have been compiled with "--enable-memory-limit", so we cannot modify it...
+            // no need to notify user of this unless they tried using memory_limit in their phpDocumentor.ini...
+            if (isset($phpdoc_ini_setting))
+            {
+                phpDocumentor_out("Unable to alter memory_limit via your phpDocumentor.ini... perhaps PHP wasn't compiled with \"--enable-memory-limit\"?\n");
+            }
+        }
+    }
+    
+    function setJavadocDesc()
     {
            $this->parse->eventHandlers[PARSER_EVENT_DOCBLOCK] = 'JavaDochandleDocblock';
     }
@@ -399,7 +463,12 @@ and load the tokenizer extension for faster parsing (your version is ".phpversio
     {
         $this->render->setQuietMode($flag);
     }
- 
+
+    function setUndocumentedElementWarnings($flag = true)
+    {
+        $this->render->setUndocumentedElementWarnings($flag);
+    }
+    
     function setTargetDir($target)
     {
         $this->render->setTargetDir($target);
@@ -487,7 +556,7 @@ and load the tokenizer extension for faster parsing (your version is ".phpversio
                         $file = strtr(realpath($file), "\\", "/");
                         $file = str_replace('//','/',$file);
 
-                        if (!$this->setup->checkIgnore(basename($file),dirname($file),$this->ignore_files))
+                        if (!$this->setup->checkIgnore(basename($file),dirname($file),$this->ignore_files,true,$this->ignoresymlinks))
                         {
                             $filelist[] = str_replace('\\','/',$file);
                         } else {
@@ -510,7 +579,7 @@ and load the tokenizer extension for faster parsing (your version is ".phpversio
                     $file = str_replace('//','/',$file);
                     flush();
 
-                    if (!$this->setup->checkIgnore(basename($file),dirname($file),$this->ignore_files))
+                    if (!$this->setup->checkIgnore(basename($file),dirname($file),$this->ignore_files,true,$this->ignoresymlinks))
                     {
                         $filelist[] = str_replace('\\','/',$file);
                     } else {
@@ -539,22 +608,22 @@ and load the tokenizer extension for faster parsing (your version is ".phpversio
                 {
                     $dir = substr($dir,0,-1);
                 }
-                $files = $this->setup->dirList($dir,$this->hidden);
+                $files = $this->setup->dirList($dir,$this->hidden,$this->ignoresymlinks);
                 if (is_array($files))
                 {
                     foreach($files as $file)
                     {
-                        // Make sure the file isn't a hidden file
-                        $file = strtr($file, "\\", "/");
-                        if (substr(basename($file),0,1) != ".")
+                        $file = strtr($file, '\\', '/');
+                        // file's subpath, relative to $dir
+                        $file_subpath = str_replace('\\', '/', realpath(dirname($file)));
+                        $file_subpath = preg_replace('~^' . preg_quote($dir, '~') . '~', '', $file_subpath);
+
+                        if (!$this->setup->checkIgnore(basename($file), $file_subpath, $this->ignore_files,true,$this->ignoresymlinks))
                         {
-                            if (!$this->setup->checkIgnore(basename($file),str_replace('\\','/',dirname($file)),$this->ignore_files))
-                            {
-                                $filelist[] = str_replace('\\','/',$file);
-                            } else {
-                                phpDocumentor_out("File $file Ignored\n");
-                                flush();
-                            }
+                            $filelist[] = $file;
+                        } else {
+                            phpDocumentor_out("File $file Ignored\n");
+                            flush();
                         }
                     }
                 }
@@ -681,7 +750,7 @@ and load the tokenizer extension for faster parsing (your version is ".phpversio
             flush();
         } else
         {
-            print "ERROR: nothing parsed";
+            print "\nERROR: nothing parsed\n";
             exit;
         }
     }
@@ -690,13 +759,15 @@ and load the tokenizer extension for faster parsing (your version is ".phpversio
      */
     function parseIni()
     {
-        phpDocumentor_out("Parsing configuration file phpDocumentor.ini...");
+        phpDocumentor_out("Parsing configuration file phpDocumentor.ini...\n");
         flush();
         if ('/tmp/pear' != '@'.'DATA-DIR@')
         {
             $options = phpDocumentor_parse_ini_file(str_replace('\\','/', '/tmp/pear/PhpDocumentor') . PATH_DELIMITER . 'phpDocumentor.ini',true);
+            phpDocumentor_out("   (found in " . '/tmp/pear/PhpDocumentor' . PATH_DELIMITER . ")...\n");
         } else {
             $options = phpDocumentor_parse_ini_file(str_replace('\\','/',$GLOBALS['_phpDocumentor_install_dir']) . PATH_DELIMITER . 'phpDocumentor.ini',true);
+            phpDocumentor_out("   (found in " . $GLOBALS['_phpDocumentor_install_dir'] . PATH_DELIMITER . ")...\n");
         }
 
         if (!$options)
@@ -740,18 +811,32 @@ and load the tokenizer extension for faster parsing (your version is ".phpversio
         }
     }
     
-
+    /**
+     * Performs character-based validation of Output Converter Template name pieces
+     * @param string the name piece (just ONE of either Output, Converter, or Template piece)
+     * @param string any extra characters to allow beyond the default character set
+     * @return string|bool the clean name, or FALSE if piece is deemed invalid
+     * @access private
+     */
     function cleanConverterNamePiece($name, $extra_characters_to_allow = '')
     {
         $name = str_replace("\\", "/", $name);
         // security:  ensure no opportunity exists to use "../.." pathing in this value
-        $name = preg_replace('/[^a-zA-Z0-9' . $extra_characters_to_allow . '_]/', "", $name);
-        
+        $name = preg_replace('/[^a-zA-Z0-9' . $extra_characters_to_allow . '_-]/', "", $name);
+
         // absolutely positively do NOT allow two consecutive dots ".."
         if (strpos($name, '..') > -1) $name = false;
         return $name;
     }
-    
+
+    /**
+     * Figures out what output converter to use
+     * @param string Output Converter Template name
+     * @access private
+     * @global array
+     * @uses cleanConverterNamePieces
+     * @uses phpDocumentor_out
+     */    
     function setupConverters($output = false)
     {
         global $_phpDocumentor_setting;
@@ -776,7 +861,10 @@ and load the tokenizer extension for faster parsing (your version is ".phpversio
                 }
                 if (isset($c[$i][1]))
                 {
-                    $b = $this->cleanConverterNamePiece($c[$i][1], '\/');  // must allow "/" due to options like "DocBook/peardoc2"
+                    /*
+                     * must allow "/" due to options like "DocBook/peardoc2"
+                     */
+                    $b = $this->cleanConverterNamePiece($c[$i][1], '\/');
                 }
                 else
                 {
@@ -784,7 +872,7 @@ and load the tokenizer extension for faster parsing (your version is ".phpversio
                 }
                 if (isset($c[$i][2]))
                 {
-                    /**
+                    /*
                      * must allow "." due to options like "phpdoc.de"
                      * must allow "/" due to options like "DOM/default"
                      */

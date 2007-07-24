@@ -1459,7 +1459,7 @@
       fix example text
 
 
-2003-04-20  Greg Beaver <cellog@users.sourceforge.net>
+2003-04-20  Greg Beaver <cellog@php.net>
     * plugins/*
       Smarty.class.php
       Smarty_Compiler.class.php
@@ -1492,7 +1492,7 @@
 
     * libs/Smarty.class.php
       libs/Smarty_Compiler.class.php:
-      added CVS $Id: ChangeLog,v 1.1 2005/10/17 18:37:38 jeichorn Exp $
+      added CVS $Id: ChangeLog,v 1.2 2007/04/19 20:20:57 ashnazg Exp $
 
 2003-03-31  Messju Mohr  <messju@lammfellpuschen.de>
 

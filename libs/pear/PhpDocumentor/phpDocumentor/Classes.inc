@@ -29,7 +29,7 @@
  * @author     Greg Beaver <cellog@php.net>
  * @copyright  2001-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: Classes.inc,v 1.9 2006/04/30 22:18:13 cellog Exp $
+ * @version    CVS: $Id: Classes.inc,v 1.10 2007/04/19 20:20:57 ashnazg Exp $
  * @filesource
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
@@ -54,9 +54,9 @@
  * method is the meat of the class, and processes the class trees from root to
  * branch, ensuring that parsing order is unimportant.}}
  * @package phpDocumentor
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.0rc1
- * @version $Id: Classes.inc,v 1.9 2006/04/30 22:18:13 cellog Exp $
+ * @version $Id: Classes.inc,v 1.10 2007/04/19 20:20:57 ashnazg Exp $
  */
 class Classes
 {

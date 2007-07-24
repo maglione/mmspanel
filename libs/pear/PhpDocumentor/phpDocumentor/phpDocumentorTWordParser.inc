@@ -30,7 +30,7 @@
  * @author     Gregory Beaver <cellog@php.net>
  * @copyright  2002-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: phpDocumentorTWordParser.inc,v 1.5 2006/04/30 22:18:14 cellog Exp $
+ * @version    CVS: $Id: phpDocumentorTWordParser.inc,v 1.7 2007/06/25 13:40:37 ashnazg Exp $
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
  * @since      1.2
@@ -38,7 +38,7 @@
 /**
  * Like WordParser, but expects an array of tokens from the tokenizer instead
  * of a string.
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @package phpDocumentor
  * @subpackage WordParsers
  * @since 1.2
@@ -196,7 +196,9 @@ class phpDocumentorTWordParser extends WordParser
                 $found = true;
                 for(;$gpos<count($this->_global_search);$gpos++,$pos++)
                 {
-                    if (!$this->tokenEquals($this->_global_search[$gpos],$this->_all[$pos])) $found = false;
+                    if (isset($this->_all[$pos])
+                        && !$this->tokenEquals($this->_global_search[$gpos],$this->_all[$pos])
+                    ) $found = false;
                 }
             }
             if ($found)

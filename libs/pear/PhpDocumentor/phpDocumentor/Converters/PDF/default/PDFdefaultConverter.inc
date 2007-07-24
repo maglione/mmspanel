@@ -30,7 +30,7 @@
  * @author     Greg Beaver <cellog@php.net>
  * @copyright  2002-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: PDFdefaultConverter.inc,v 1.4 2007/02/20 14:25:23 ashnazg Exp $
+ * @version    CVS: $Id: PDFdefaultConverter.inc,v 1.7 2007/05/31 02:02:42 ashnazg Exp $
  * @filesource
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
@@ -47,9 +47,9 @@ include_once('phpDocumentor/Converters/PDF/default/class.phpdocpdf.php');
  *
  * @package Converters
  * @subpackage PDFdefault
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.1
- * @version $Id: PDFdefaultConverter.inc,v 1.4 2007/02/20 14:25:23 ashnazg Exp $
+ * @version $Id: PDFdefaultConverter.inc,v 1.7 2007/05/31 02:02:42 ashnazg Exp $
  * @todo Implement links to conflicts/inheritance
  */
 class PDFdefaultConverter extends Converter
@@ -287,6 +287,12 @@ class PDFdefaultConverter extends Converter
             $a = $val->Convert($this);
             $tags[] = array('keyword' => 'Static Variable Used','data' => $val->converted_returnType.' '.$static.': '.$a);
         }
+        if ($element->docblock->properties)
+        foreach($element->docblock->properties as $property => $val)
+        {
+            $a = $val->Convert($this);
+            $tags[] = array('keyword' => ucfirst($val->keyword),'data' => $val->converted_returnType.' '.$property.': '.$a);
+        }
         foreach($tagses as $tag)
         {
             if (isset($names[$tag->keyword])) $tag->keyword = $names[$tag->keyword];
@@ -513,9 +519,9 @@ class PDFdefaultConverter extends Converter
             $a = $val->Convert($this);
             $params[$param] = array("var" => $param,"datatype" => $val->converted_returnType,"data" => $a);
         }
-        if ($element->docblock->return)
+        if (!$element->docblock->return)
         {
-            if (!$element->docblock->return->returnType) $element->docblock->return->returnType = 'void';
+            $element->docblock->return->returnType = 'void';
         }
         $template = &$this->newSmarty();
         $template->assign('dest', urlencode($element->type.$element->docblock->package.$element->name));

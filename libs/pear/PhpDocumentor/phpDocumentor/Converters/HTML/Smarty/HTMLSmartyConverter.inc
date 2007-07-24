@@ -32,7 +32,7 @@
  * @author     Greg Beaver <cellog@php.net>
  * @copyright  2000-2006 Joshua Eichorn, Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: HTMLSmartyConverter.inc,v 1.14 2007/03/13 20:47:35 ashnazg Exp $
+ * @version    CVS: $Id: HTMLSmartyConverter.inc,v 1.15 2007/04/19 20:20:57 ashnazg Exp $
  * @filesource
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
@@ -47,9 +47,9 @@
  * @package Converters
  * @subpackage HTMLSmarty
  * @see parserDocBlock, parserInclude, parserPage, parserClass, parserDefine, parserFunction, parserMethod, parserVar
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.0rc1
- * @version $Revision: 1.14 $
+ * @version $Revision: 1.15 $
  */
 class HTMLSmartyConverter extends Converter
 {

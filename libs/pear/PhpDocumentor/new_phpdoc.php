@@ -12,7 +12,7 @@
 // An HTML interface for Joshua Eichorn's phpDocumentor
 // Author: Juan Pablo Morales  <ju-moral@uniandes.edu.co>
 //    Joshua Eichorn <jeichorn@phpdoc.org>
-//    Gregory Beaver <cellog@users.sourceforge.net>
+//    Gregory Beaver <cellog@php.net>
 //
 // phpDocumentor, a program for creating javadoc style documentation from php code
 // Copyright (C) 2000-2002 Joshua Eichorn
@@ -641,18 +641,18 @@ There is only 1 template for all other Converters, <b>default</b>
          Juan Pablo Morales <a href=
          "mailto:ju-moral@uniandes.edu.co">ju-moral@uniandes.edu.co</a><br>
          Gregory Beaver <a href=
-         "mailto:cellog@users.sourceforge.net">cellog@users.sourceforge.net</a>
+         "mailto:cellog@php.net">cellog@php.net</a>
       </p>
       <p>
-         If you have any problems with phpDocumentor, please visit the website: <a
-         href='http://phpdocu.sourceforge.net'>phpdocu.sourceforge.net</a> and
-         submit a bug
+         If you have any problems with phpDocumentor, please visit the website: 
+         <a href='http://pear.php.net/package/PhpDocumentor'>pear.php.net/package/PhpDocumentor</a>
+         and submit a bug
       </p>
       <!-- Created: Tue Jun 26 18:52:40 MEST 2001 -->
       <!-- hhmts start -->
 <pre>
-Last modified: $Date: 2005/10/17 18:15:16 $
-Revision: $Revision: 1.1 $
+Last modified: $Date: 2007/04/19 20:20:57 $
+Revision: $Revision: 1.3 $
 </pre>
       <!-- hhmts end -->
       <?php } //End the else that prints all code

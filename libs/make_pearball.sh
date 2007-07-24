@@ -1,7 +1,7 @@
 #!/bin/sh
 # Script para gerar uma arvore PEAR
 
-PACOTES="Auth Config File_Gettext-beta HTML_Menu HTML_QuickForm HTML_QuickForm_Renderer_Tableless-beta HTML_QuickForm_advmultiselect HTML_Template_Flexy I18Nv2-beta Net_LDAP-beta HTTP_Session-beta PHP_Compat Structures_DataGrid-beta Structures_DataGrid_DataSource_Array-beta Structures_DataGrid_Renderer_HTMLTable-beta Structures_DataGrid_Renderer_Pager-beta Translation2-beta Validate-beta PhpDocumentor"
+PACOTES="Auth Config File_Gettext-beta HTML_Menu HTML_QuickForm HTML_QuickForm_Renderer_Tableless-beta HTML_QuickForm_advmultiselect HTML_Template_Flexy I18Nv2-beta Log Net_LDAP-beta HTTP_Session-beta PHP_Compat Structures_DataGrid-beta Structures_DataGrid_DataSource_Array-beta Structures_DataGrid_Renderer_HTMLTable-beta Structures_DataGrid_Renderer_Pager-beta Translation2-beta Validate-beta PhpDocumentor"
 
 # Destino tmp
 TARGET=/tmp/pear

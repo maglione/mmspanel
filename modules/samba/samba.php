@@ -1,13 +1,19 @@
 <?php
 /**
  * samba/samba.php - Samba main class
- * 
+ *
+ * LICENSE: This source file is subject to version 2.0 of GNU GENERAL PUBLIC LICENSE (GPL).
+ *          See the enclosed file COPYRIGHT for license information. If you did not receive 
+ *          this file, see http://www.gnu.org/licenses/gpl-2.0.txt.
+ *
+ * @package MMSPanel
  * @author Daniel Maglione <daniel@maglione.com.br>
  * @version 1.0
- * @package netpanel-samba
- * @project MAGLIONE NetPanel
- * @copyright Maglione Informatica 2007
+ * @copyright 2007 - Daniel Maglione <daniel@maglione.com.br>
+ * @license   http://www.gnu.org/licenses/gpl-2.0.txt
+ * @project   MMSPanel
  */
+
 
 /** Netpanel pre setup */
 require_once '../../config.php';
@@ -18,7 +24,7 @@ require_once 'config.php';
 @ini_set('include_path', REAL_PATH . PATH_SEPARATOR . REAL_PATH . '/libs' . PATH_SEPARATOR . REAL_PATH . '/libs/pear' . PATH_SEPARATOR . REAL_PATH . '/libs/php-gettext');
 
 /** Framework library */
-require_once 'Maglione_NetPanel.php';
+require_once 'MMSPanel.php';
 
 class Samba extends NetPanel
 {

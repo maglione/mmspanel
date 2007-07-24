@@ -30,7 +30,7 @@
  * @author     Gregory Beaver <cellog@php.net>
  * @copyright  2002-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: phpDocumentorTParser.inc,v 1.20 2007/02/22 14:13:41 ashnazg Exp $
+ * @version    CVS: $Id: phpDocumentorTParser.inc,v 1.27 2007/06/28 02:14:03 ashnazg Exp $
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
  * @since      1.2
@@ -39,8 +39,8 @@
  * Tokenizer-based parser for PHP source code
  * @package phpDocumentor
  * @subpackage Parsers
- * @author Gregory Beaver <cellog@users.sourceforge.net>
- * @version $Revision: 1.20 $
+ * @author Gregory Beaver <cellog@php.net>
+ * @version $Revision: 1.27 $
  */
 class phpDocumentorTParser extends Parser
 {
@@ -115,6 +115,7 @@ class phpDocumentorTParser extends Parser
     var $_pf_in_define = false;
     var $_pf_in_global = false;
     var $_pf_in_include = false;
+    var $_pf_in_include_value = false;
     var $_pf_in_var = false;
     var $_pf_interface = false;
     var $_pf_funcparam_val = false;
@@ -265,7 +266,7 @@ class phpDocumentorTParser extends Parser
                 }
             }
 
-            if (0)//PHPDOCUMENTOR_DEBUG == true)
+            if (PHPDOCUMENTOR_DEBUG == true)
             {
                 echo "LAST: ";
                 if (is_array($this->_pv_last_word))
@@ -758,9 +759,22 @@ class phpDocumentorTParser extends Parser
                 }
             } else
             {
+                if($this->_pf_in_include_value && $a == PARSER_EVENT_INCLUDE_PARAMS) {
+                    /* we're already inside the include value, 
+                     * so an open paren does NOT mean the beginning of "include parameters"...
+                     * it's just a part of the include's value string...
+                     * but we've already pushed PARSER_EVENT_INCLUDE_PARAMS onto the stack... 
+                     * we need to pop it off before handleIncludeParams gets called...
+                     */
+                    $this->_event_stack->popEvent();
+                    // also need to keep that open parens...
+                    $this->_pv_include_value .= $word;
+                }
                 $this->_pv_include_params_data = '';
             }
         }
+
+        if (!empty($this->_pv_include_value)) $this->_pf_in_include_value = true;
 
         if ($this->checkEventPop($word,$pevent))
         {
@@ -771,6 +785,7 @@ class phpDocumentorTParser extends Parser
             $this->_pv_include->setValue($this->_pv_include_value);
             $this->publishEvent(PHPDOCUMENTOR_EVENT_INCLUDE,$this->_pv_include);
             $this->_pf_includename_isset = false;
+            $this->_pf_in_include_value = false;
             unset($this->_pv_include);
             unset($this->_pv_include_name);
             unset($this->_pv_include_value);
@@ -786,6 +801,7 @@ class phpDocumentorTParser extends Parser
             $this->_pv_include->setValue($this->_pv_include_value);
             $this->publishEvent(PHPDOCUMENTOR_EVENT_INCLUDE,$this->_pv_include);
             $this->_pf_includename_isset = false;
+            $this->_pf_in_include_value = false;
             unset($this->_pv_include);
             unset($this->_pv_include_name);
             unset($this->_pv_include_value);
@@ -1578,6 +1594,9 @@ class phpDocumentorTParser extends Parser
                 if (!$this->_pv_docblock->return) {
                     $this->_pv_docblock->return = $this->_pv_dtemplate->return;
                 }
+                if (!$this->_pv_docblock->var) {
+                    $this->_pv_docblock->var = $this->_pv_dtemplate->var;
+                }
                 $my_desc->add($this->_pv_dtemplate->sdesc);
                 $my_desc->add($this->_pv_dtemplate->desc);
             }
@@ -1728,11 +1747,11 @@ class phpDocumentorTParser extends Parser
                     {
                         $x = strrpos($value[$i],'}}');
                         // strip internal and cycle as if it were normal text.
-                        $startval = substr($value[$i],0,$x - 1);
+                        $startval = substr($value[$i],0,$x);
                         if ($priv) {
                             $a->add($startval);
                         }
-                        $value[$i] = substr($value[$i],$x + 1);
+                        $value[$i] = substr($value[$i],$x + 2);
                         if (!$value[$i]) $value[$i] = '';
                         $this->_pf_internal = false;
                         $a->add($value[$i]);
@@ -1975,7 +1994,7 @@ class phpDocumentorTParser extends Parser
     function globalTagHandler($name, $value)
     {
         $info = $this->retrieveType($value, true);
-        if (!$info) addErrorDie(PDERROR_MALFORMED_TAG, '@global');
+        if (!$info) addError(PDERROR_MALFORMED_TAG, '@global');
         $type = $info['type'];
         $var = $info['var'];
         $desc = $info['desc'];
@@ -2006,7 +2025,7 @@ class phpDocumentorTParser extends Parser
     function staticvarTagHandler($name, $value)
     {
         $info = $this->retrieveType($value, true);
-        if (!$info) addErrorDie(PDERROR_MALFORMED_TAG, '@staticvar');
+        if (!$info) addError(PDERROR_MALFORMED_TAG, '@staticvar');
         $type = $info['type'];
         $var = $info['var'];
         $desc = $info['desc'];
@@ -2032,7 +2051,6 @@ class phpDocumentorTParser extends Parser
     function paramTagHandler($name, $value)
     {
         $info = $this->retrieveType($value, true);
-        //if (!$info) addErrorDie(PDERROR_MALFORMED_TAG, '@param');
 	    if (!$info) { addError(PDERROR_MALFORMED_TAG, '@param'); return; }
         $type = $info['type'];
         $var = $info['var'];
@@ -2059,7 +2077,6 @@ class phpDocumentorTParser extends Parser
     function returnTagHandler($name, $value)
     {
         $info = $this->retrieveType($value, true);
-        //if (!$info) addErrorDie(PDERROR_MALFORMED_TAG, '@return');
         if (!$info) { addError(PDERROR_MALFORMED_TAG, '@return'); return; }
         $type = $info['type'];
         $desc = $info['desc'];
@@ -2073,12 +2090,30 @@ class phpDocumentorTParser extends Parser
     function varTagHandler($name, $value)
     {
         $info = $this->retrieveType($value, true);
-        if (!$info) addErrorDie(PDERROR_MALFORMED_TAG, '@var');
+        if (!$info) addError(PDERROR_MALFORMED_TAG, '@var');
         $type = $info['type'];
         $desc = $info['desc'];
         $dtype = $this->_pv_dtype;
         $this->$dtype->addVar($type,$this->getInlineTags($desc));
     }
+    
+    /**
+     * Handles @property(-read or -write) and @method magic tags
+     */
+    function propertyTagHandler( $name, $value )
+    {
+        $info = $this->retrieveType( $value, true );
+        if ( !$info )
+            addError(PDERROR_MALFORMED_TAG, '@' . $name );
+
+        $type = $info['type'];
+        $var = $info['var'];
+        $desc = $info['desc'];
+
+        $dtype = $this->_pv_dtype;
+        $this->$dtype->addProperty( $name, $var, $type, $this->getInlineTags( $desc ) );
+    }
+    
     /**#@-*/
     /**#@+
      * @access private
@@ -2171,7 +2206,9 @@ class phpDocumentorTParser extends Parser
                 $result['var'] = false;
             } else
             {
-                if (substr($value[0],0,1) == '$' || substr($value[0],0,2) == '&$')
+                if (substr($value[0],0,1) == '$'        // variable name ($) 
+                    || substr($value[0],0,2) == '&$'    // var passed by reference (&$)
+                    || substr($value[0],-2,2) == '()')  // method name (only used by magic method)
                 {
                     $result['var'] = trim($value[0]);
                     array_shift($value);

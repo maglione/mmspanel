@@ -19,7 +19,7 @@
  * @author     Adam Ashley <aashley@php.net>
  * @copyright  2001-2006 The PHP Group
  * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
- * @version    CVS: $Id: SOAP5.php,v 1.7 2007/06/12 03:11:26 aashley Exp $
+ * @version    CVS: $Id: SOAP5.php,v 1.9 2007/07/02 08:25:41 aashley Exp $
  * @since      File available since Release 1.4.0
  */
 
@@ -101,7 +101,7 @@ require_once "PEAR.php";
  * @author     Adam Ashley <aashley@php.net>
  * @copyright  2001-2006 The PHP Group
  * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
- * @version    Release: 1.5.2  File: $Revision: 1.7 $
+ * @version    Release: 1.5.4  File: $Revision: 1.9 $
  * @since      Class available since Release 1.4.0
  */
 class Auth_Container_SOAP5 extends Auth_Container
@@ -226,17 +226,17 @@ class Auth_Container_SOAP5 extends Auth_Container
      * @access private
      * @param  array
      */
-    function _validateOptions($array)
+    function _validateOptions()
     {
-        if (   (   is_null($this->options['wsdl'])
-                && is_null($this->options['location'])
-                && is_null($this->options['uri']))
-            || (   is_null($this->options['wsdl'])
-                && (   is_null($this->options['location'])
-                    || is_null($this->options['uri'])))) {
+        if (   (   is_null($this->_options['wsdl'])
+                && is_null($this->_options['location'])
+                && is_null($this->_options['uri']))
+            || (   is_null($this->_options['wsdl'])
+                && (   is_null($this->_options['location'])
+                    || is_null($this->_options['uri'])))) {
             return PEAR::raiseError('Either a WSDL file or a location/uri pair must be specified.');
         }
-        if (is_null($this->options['method'])) {
+        if (is_null($this->_options['method'])) {
             return PEAR::raiseError('A method to call on the soap service must be specified.');
         }
         return true;
@@ -253,13 +253,13 @@ class Auth_Container_SOAP5 extends Auth_Container
      */
     function _setDefaults()
     {
-        $this->options['wsdl']           = null;
-        $this->options['location']       = null;
-        $this->options['uri']            = null;
-        $this->options['method']         = null;
-        $this->options['usernamefield']  = 'username';
-        $this->options['passwordfield']  = 'password';
-        $this->options['matchpasswords'] = true;
+        $this->_options['wsdl']           = null;
+        $this->_options['location']       = null;
+        $this->_options['uri']            = null;
+        $this->_options['method']         = null;
+        $this->_options['usernamefield']  = 'username';
+        $this->_options['passwordfield']  = 'password';
+        $this->_options['matchpasswords'] = true;
     }
 
     // }}}

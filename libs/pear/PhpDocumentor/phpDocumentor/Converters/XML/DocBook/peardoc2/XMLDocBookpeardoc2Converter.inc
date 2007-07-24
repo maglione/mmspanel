@@ -31,7 +31,7 @@
  * @author     Greg Beaver <cellog@php.net>
  * @copyright  2002-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: XMLDocBookpeardoc2Converter.inc,v 1.6 2006/10/24 04:18:14 cellog Exp $
+ * @version    CVS: $Id: XMLDocBookpeardoc2Converter.inc,v 1.8 2007/04/24 21:32:15 ashnazg Exp $
  * @filesource
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
@@ -51,9 +51,9 @@
  * DocBook converter.
  * @package Converters
  * @subpackage XMLDocBook
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.2
- * @version $Id: XMLDocBookpeardoc2Converter.inc,v 1.6 2006/10/24 04:18:14 cellog Exp $
+ * @version $Id: XMLDocBookpeardoc2Converter.inc,v 1.8 2007/04/24 21:32:15 ashnazg Exp $
  */
 class XMLDocBookpeardoc2Converter extends Converter
 {
@@ -699,7 +699,6 @@ class XMLDocBookpeardoc2Converter extends Converter
             $listing = $this->getCData($listing);
         }
         return '<programlisting role="php">' . $this->getCData($listing) . '</programlisting>';
-        return parent::ProgramExample($listing, false, $inlinesourceparse, $class, $linenum, $filesourcepath);
     }
     
     /**

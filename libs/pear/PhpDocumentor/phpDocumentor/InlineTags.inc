@@ -30,7 +30,7 @@
  * @author     Gregory Beaver <cellog@php.net>
  * @copyright  2002-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: InlineTags.inc,v 1.6 2006/05/22 01:07:28 cellog Exp $
+ * @version    CVS: $Id: InlineTags.inc,v 1.7 2007/04/19 20:20:57 ashnazg Exp $
  * @filesource
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
@@ -41,9 +41,9 @@
  * @see parserStringWithInlineTags
  * @package phpDocumentor
  * @subpackage InlineTags
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.0rc1
- * @version $Revision: 1.6 $
+ * @version $Revision: 1.7 $
  * @tutorial inlinetags.pkg
  */
 class parserInlineTag extends parserBase
@@ -107,7 +107,7 @@ class parserInlineTag extends parserBase
  * @tutorial tags.inlinelink.pkg
  * @package phpDocumentor
  * @subpackage InlineTags
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.0rc1
  */
 class parserLinkInlineTag extends parserInlineTag

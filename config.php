@@ -10,8 +10,8 @@
   /** Dados para conexão com LDAP */
   define ('LDAP_HOST', 'localhost');
   define ('LDAP_PORT', '389');
-  define ('LDAP_ROOT_DN', 'dc=maglione, dc=com, dc=br');
-  define ('LDAP_BIND_USER', 'cn=admin, dc=maglione, dc=com, dc=br');
+  define ('LDAP_ROOT_DN', 'dc=rpereira, dc=com, dc=br');
+  define ('LDAP_BIND_USER', 'cn=admin, dc=rpereira, dc=com, dc=br');
   define ('LDAP_BIND_PASS', 'maglione');
   define ('LDAP_USERS_OU', 'ou=Users');
   define ('LDAP_GROUPS_OU', 'ou=Groups');

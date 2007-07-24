@@ -25,12 +25,11 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  *
- * @category   documentation
  * @package    Converters
  * @author     Greg Beaver <cellog@php.net>
  * @copyright  2001-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: Converter.inc,v 1.35 2007/02/16 17:28:49 ashnazg Exp $
+ * @version    CVS: $Id: Converter.inc,v 1.38 2007/04/25 19:02:42 ashnazg Exp $
  * @filesource
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
@@ -68,9 +67,9 @@ include_once("phpDocumentor/Smarty-2.6.0/libs/Smarty.class.php");
  *
  * @package Converters
  * @abstract
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.0rc1
- * @version $Id: Converter.inc,v 1.35 2007/02/16 17:28:49 ashnazg Exp $
+ * @version $Id: Converter.inc,v 1.38 2007/04/25 19:02:42 ashnazg Exp $
  */
 class Converter
 {
@@ -4048,6 +4047,7 @@ class Converter
         $this->class_data->assign("api_tags",$docblock['api_tags']);
         $this->class_data->assign("info_tags",$docblock['info_tags']);
         $this->class_data->assign("utags",$docblock['utags']);
+        $this->class_data->assign( "prop_tags", $docblock['property_tags'] );
         if ($this->hasSourceCode($element->getPath())) {
         $this->class_data->assign("class_slink",$this->getSourceAnchor($element->getPath(),$element->getLineNumber(),$element->getLineNumber(),true));
         }
@@ -4440,6 +4440,7 @@ class Converter
         $tags = $ret = $api_tags = $info_tags = array();
         $api_tags_arr = array("abstract", "access", "deprecated", "example", "filesource",
                              "global", "internal", "name", "return", "see",
+                             "property", "property-read", "property-write", "method",
                              "staticvar", "usedby", "uses", "var");
         if (!$nopackage)
         {
@@ -4486,6 +4487,24 @@ class Converter
             $a = $val->Convert($this);
             $tags[] = $api_tags[] = array('keyword' => 'staticvar','data' => $val->converted_returnType.' '.$static.': '.$a);
         }
+        $property_tags = array();
+        foreach ( $element->docblock->properties as $prop_name => $val )
+        {
+            $a = $val->Convert( $this );
+            if ( !empty( $a ) )
+            {
+                $tags[] = $api_tags[] = array( 'keyword' => $val->keyword ,
+                                               'data' => $val->converted_returnType  . ' ' . $prop_name . ': ' . $a );
+                $prop['prop_name'] = $prop_name;
+                $prop['access'] = $val->keyword == 'property-read' ? 'read' :
+                                    ( $val->keyword == 'property-write' ? 'write' : 'read/write' );
+                $prop['prop_type'] = $val->converted_returnType;
+                $prop['sdesc'] = $a;
+                $property_tags[ $prop_name ] = $prop;
+            }
+        }
+        ksort( $property_tags, SORT_STRING );
+        $property_tags = array_values( $property_tags );
         $info_tags_sorted = array();
         $ret['static'] = false;
         foreach($tagses as $tag)
@@ -4535,6 +4554,7 @@ class Converter
         $ret['api_tags'] = $api_tags;
         $ret['info_tags'] = $info_tags;
         $ret['utags'] = $utags;
+        $ret['property_tags'] = $property_tags;
         return $ret;
     }
 

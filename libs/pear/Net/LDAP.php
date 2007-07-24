@@ -15,7 +15,7 @@
  * @author      Benedikt Hallinger <beni@php.net>
  * @copyright   2003-2007 Tarjej Huse, Jan Wagner, Del Elson, Benedikt Hallinger
  * @license     http://www.gnu.org/copyleft/lesser.html
- * @version     CVS: $Id: LDAP.php,v 1.61 2007/06/28 07:59:44 beni Exp $
+ * @version     CVS: $Id: LDAP.php,v 1.64 2007/07/24 06:38:15 beni Exp $
  * @link        http://pear.php.net/package/Net_LDAP/
  */
 
@@ -34,6 +34,11 @@ require_once('LDAP/Filter.php');
 define ('NET_LDAP_ERROR', 1000);
 
 /**
+* Net_LDAP Version
+*/
+define ('NET_LDAP_VERSION', '1.0.0');
+
+/**
  * Net_LDAP - manipulate LDAP servers the right way!
  *
  * @category    Net
@@ -44,7 +49,7 @@ define ('NET_LDAP_ERROR', 1000);
  * @author      Benedikt Hallinger <beni@php.net>
  * @copyright   2003-2007 Tarjej Huse, Jan Wagner, Del Elson, Benedikt Hallinger
  * @license     http://www.gnu.org/copyleft/lesser.html
- * @version     CVS: $Id: LDAP.php,v 1.61 2007/06/28 07:59:44 beni Exp $
+ * @version     CVS: $Id: LDAP.php,v 1.64 2007/07/24 06:38:15 beni Exp $
  * @link        http://pear.php.net/package/Net_LDAP/
  */
  class Net_LDAP extends PEAR
@@ -128,7 +133,7 @@ define ('NET_LDAP_ERROR', 1000);
      */
     function getVersion()
     {
-        return '0.7.2';
+        return NET_LDAP_VERSION;
     }
 
     /**
@@ -592,7 +597,7 @@ define ('NET_LDAP_ERROR', 1000);
      * @param array $params Array of changes
      * @return Net_LDAP_Error|true    Net_LDAP_Error object or true
      */
-    function modify($entry , $parms = array())
+    function modify(&$entry , $parms = array())
     {
         if (is_string($entry)) {
             $entry = $this->getEntry($entry);
@@ -610,9 +615,10 @@ define ('NET_LDAP_ERROR', 1000);
                 if (Net_LDAP::isError($msg)) {
                     return $msg;
                 }
-                $msg = $entry->update($this);
+                $entry->setLDAP($this);
+                $msg = $entry->update();
                 if (Net_LDAP::isError($msg)) {
-                    return $msg;
+                    return PEAR::raiseError("Could not modify entry: ".$msg->getMessage());
                 }
             }
         }
@@ -830,7 +836,7 @@ define ('NET_LDAP_ERROR', 1000);
 
 
     /**
-     * Tell if a dn already exists
+     * Tell if a DN does exist in the directory
      *
      * @param string $dn  The DN of the object to test
      * @return boolean
@@ -838,22 +844,21 @@ define ('NET_LDAP_ERROR', 1000);
     function dnExists($dn)
     {
         // make dn relative to parent
-        $base = Net_LDAP_Util::ldap_explode_dn($this->_newdn, array('casefolding' => 'none', 'reverse' => false, 'onlyvalues' => false));
+        $base = Net_LDAP_Util::ldap_explode_dn($dn, array('casefold' => 'none', 'reverse' => false, 'onlyvalues' => false));
         if (Net_LDAP::isError($base)) {
            return $base;
         }
-        $filter = array_shift($base);
+        $filter_dn = array_shift($base);
         // maybe the dn consist of a multivalued RDN, we must build the dn in this case
         // because the $child-RDN is an array!
-        if (is_array($filter)) {
-            $filter = Net_LDAP_Util::canonical_dn($filter);
+        if (is_array($filter_dn)) {
+            $filter_dn = Net_LDAP_Util::canonical_dn($filter_dn);
         }
         $base = Net_LDAP_Util::canonical_dn($base);
 
-        $result = @ldap_list($this->_link, $base, $filter, array(), 1, 1);
+        $result = @ldap_list($this->_link, $base, $filter_dn, array(), 1, 1);
         if (ldap_errno($this->_link) == 32) {
-            $return = false;
-            return $return;
+            return false;
         }
         if (ldap_errno($this->_link) != 0) {
             PEAR::raiseError(ldap_error($this->_link), ldap_errno($this->_link));
@@ -862,8 +867,7 @@ define ('NET_LDAP_ERROR', 1000);
             $return = true;
             return $return;
         }
-        $return = false;
-        return $return;
+        return false;
     }
 
 
@@ -941,7 +945,8 @@ define ('NET_LDAP_ERROR', 1000);
        } else {
            // local move
            $entry->dn($newdn);
-           return $entry->update($this);
+           $entry->setLDAP($this);
+           return $entry->update();
        }
    }
 

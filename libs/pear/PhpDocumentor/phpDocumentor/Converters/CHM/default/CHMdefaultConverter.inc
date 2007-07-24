@@ -31,7 +31,7 @@
  * @author     Greg Beaver <cellog@php.net>
  * @copyright  2000-2006 Joshua Eichorn, Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: CHMdefaultConverter.inc,v 1.11 2007/03/13 20:47:35 ashnazg Exp $
+ * @version    CVS: $Id: CHMdefaultConverter.inc,v 1.12 2007/04/19 20:20:57 ashnazg Exp $
  * @filesource
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
@@ -49,9 +49,9 @@
  * @link http://www.microsoft.com/downloads/release.asp?releaseid=33071 MS HTML Help Workshop download
  * @package Converters
  * @subpackage CHMdefault
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.0rc1
- * @version $Revision: 1.11 $
+ * @version $Revision: 1.12 $
  */
 class CHMdefaultConverter extends Converter
 {

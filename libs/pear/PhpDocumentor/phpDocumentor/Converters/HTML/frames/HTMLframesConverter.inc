@@ -31,7 +31,7 @@
  * @author     Gregory Beaver <cellog@php.net>
  * @copyright  2002-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: HTMLframesConverter.inc,v 1.15 2007/03/13 20:47:34 ashnazg Exp $
+ * @version    CVS: $Id: HTMLframesConverter.inc,v 1.16 2007/04/19 20:20:57 ashnazg Exp $
  * @filesource
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
@@ -46,9 +46,9 @@
  * @package Converters
  * @subpackage HTMLframes
  * @see parserDocBlock, parserInclude, parserPage, parserClass, parserDefine, parserFunction, parserMethod, parserVar
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.2
- * @version $Id: HTMLframesConverter.inc,v 1.15 2007/03/13 20:47:34 ashnazg Exp $
+ * @version $Id: HTMLframesConverter.inc,v 1.16 2007/04/19 20:20:57 ashnazg Exp $
  */
 class HTMLframesConverter extends Converter
 {

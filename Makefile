@@ -5,6 +5,7 @@ LOCALES=en_US pt_BR
 
 clean:
 	rm -vf $(CURDIR)/tmp/compile_dir/*
+	find $(CURDIR) -name '*~' -exec rm -vf {} \;
 	echo "messages    = $(CURDIR)/locale"  > $(CURDIR)/locale/domains.ini
 	echo "body.html   = $(CURDIR)/locale" >> $(CURDIR)/locale/domains.ini
 	echo "footer.html = $(CURDIR)/locale" >> $(CURDIR)/locale/domains.ini

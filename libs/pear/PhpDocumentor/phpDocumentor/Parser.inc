@@ -31,7 +31,7 @@
  * @author     Gregory Beaver <cellog@php.net>
  * @copyright  2000-2006 Joshua Eichorn, Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: Parser.inc,v 1.6 2006/08/17 03:23:26 cellog Exp $
+ * @version    CVS: $Id: Parser.inc,v 1.9 2007/06/22 14:58:30 ashnazg Exp $
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
  * @since      0.1
@@ -329,8 +329,8 @@ if (!defined('T_DOC_COMMENT'))
  *
  * This parser is slower than the tokenizer-based parser, and is deprecated.
  * @author    Joshua Eichorn <jeichorn@phpdoc.org>
- * @author    Gregory Beaver <cellog@users.sourceforge.net>
- * @version    $Id: Parser.inc,v 1.6 2006/08/17 03:23:26 cellog Exp $
+ * @author    Gregory Beaver <cellog@php.net>
+ * @version    $Id: Parser.inc,v 1.9 2007/06/22 14:58:30 ashnazg Exp $
  * @package     phpDocumentor
  * @subpackage Parsers
  * @deprecated in favor of {@link phpDocumentorTParser}
@@ -355,7 +355,7 @@ class Parser extends Publisher
                         'define_params_data' => '', 'define' => false, 'define_name' => '', 'define_value' => '', 'var' => false,
                         'oldtoken' => false, 'comment_data' => '', 'function_param' => NULL, 'inline_dockeyword_type' => false,
                         'inline_dockeyword_data' => false, 'dockeyword_type' => false, 'dockeyword_data' =>false, 'param_var' => false,
-                        'include_name' => '', 'include_value' => '','include' => false, 'return_type' => '', 'cur_class' => '',
+                        'include_name' => '', 'include_value' => '','include' => false, 'return_type' => '', 'cur_class' => '', 'property_name' => false,
                         'function_data' => false, 'varname' => '', 'returntype' => false, 'vartype' => false, 'paramtype' => false,
                         'tagname' => '', 'find_global' => '', 'global_type' => '', 'paramname' => false, 'statics' => array(),
                         'static_count' => 0, 'static_val' => array(), 'docblock_type' => 'docblock', 'seelement' => false);
@@ -432,7 +432,11 @@ class Parser extends Publisher
                                 'parameter' => 'paramTagHandler',
                                 'global' => 'globalTagHandler',
                                 'staticvar' => 'staticvarTagHandler',
-                                'uses' => 'usesTagHandler'
+                                'uses' => 'usesTagHandler',
+                                'property' => 'propertyTagHandler',
+                                'property-read' => 'propertyTagHandler',
+                                'property-write' => 'propertyTagHandler',
+                                'method' => 'propertyTagHandler'
                             );
 
     var $laststart = false;
@@ -512,7 +516,7 @@ class Parser extends Publisher
                         'define_params_data' => '', 'define' => false, 'define_name' => '', 'define_value' => '', 'var' => false,
                         'oldtoken' => false, 'comment_data' => '', 'function_param' => NULL, 'inline_dockeyword_type' => false,
                         'inline_dockeyword_data' => false, 'dockeyword_type' => false, 'dockeyword_data' =>false, 'param_var' => false,
-                        'include_name' => '', 'include_value' => '','include' => false, 'return_type' => '', 'cur_class' => '',
+                        'include_name' => '', 'include_value' => '','include' => false, 'return_type' => '', 'cur_class' => '', 'property_name' => false,
                         'function_data' => false, 'varname' => '', 'returntype' => false, 'vartype' => false, 'paramtype' => false,
                         'tagname' => '', 'find_global' => '', 'global_type' => '', 'paramname' => false, 'statics' => array(),
                         'static_count' => 0, 'static_val' => array(), 'docblock_type' => 'docblock', 'linenum' => false,
@@ -594,7 +598,7 @@ class Parser extends Publisher
             // in wordparser, have to keep track of lines
             $this->publishEvent(PHPDOCUMENTOR_EVENT_NEWLINENUM, $this->wp->linenum);
 
-            if (0)//PHPDOCUMENTOR_DEBUG == true)
+            if (PHPDOCUMENTOR_DEBUG == true)
             {
                 echo "\nLAST: |" . $this->p_vars['last_word'] . "|\n";
                 echo "PEVENT: " . $this->getParserEventName($pevent) . "\n";
@@ -2265,6 +2269,45 @@ class Parser extends Publisher
             $this->p_vars['vartype'] = false;
         }
     }
+    
+    /**
+     * Handles @property(-read or -write) and @method magic tag
+     */
+    function propertyTagHandler( $word )
+    {
+        if ( $word !== false )
+        {
+            if ( !$this->p_vars['returntype'] )
+                $this->p_vars['returntype'] = trim( $word );
+            else
+            {
+                if ( !$this->p_vars['property_name'] )
+                {
+                    if ( substr( trim( $word ), 0, 1 ) == "$"
+                         || substr(trim($word), 0, 2) == "&$"
+                         || substr(trim($word), -2, 2) == "()"
+                    )
+                        $this->p_vars['property_name'] = trim( $word );
+                    else
+                        $this->p_vars['tag_value']->add( $word );
+                }
+                else
+                {
+                    $this->p_vars['tag_value']->add( $word );
+                }
+            }
+        }
+        else
+        {
+            $this->p_vars[$this->p_vars['docblock_type']]->addProperty( $this->p_vars['tagname'],
+                                                                        $this->p_vars['property_name'],
+                                                                        $this->p_vars['returntype'],
+                                                                        $this->p_vars['tag_value'] );
+            $this->p_vars['property_name'] = false;
+            $this->p_vars['returntype'] = false;
+        }
+    }
+    
     /**#@-*/
     /** @access private */
     function getSource()
@@ -3079,7 +3122,7 @@ class ppageParser extends Parser
             $this->p_vars['last_word'] = $word;
             $word = $this->wp->getWord();
 
-            if (0)//PHPDOCUMENTOR_DEBUG == true)
+            if (PHPDOCUMENTOR_DEBUG == true)
             {
                 echo "LAST: |" . $this->p_vars['last_word'] . "|\n";
                 echo "PEVENT: " . $this->getParserEventName($pevent) . "\n";

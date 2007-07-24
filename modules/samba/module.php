@@ -1,10 +1,26 @@
 <?php
+/**
+ * samba/module.php - Samba module description
+ *
+ * LICENSE: This source file is subject to version 2.0 of GNU GENERAL PUBLIC LICENSE (GPL).
+ *          See the enclosed file COPYRIGHT for license information. If you did not receive 
+ *          this file, see http://www.gnu.org/licenses/gpl-2.0.txt.
+ *
+ * @package MMSPanel
+ * @author Daniel Maglione <daniel@maglione.com.br>
+ * @version 1.0
+ * @copyright 2007 - Daniel Maglione <daniel@maglione.com.br>
+ * @license   http://www.gnu.org/licenses/gpl-2.0.txt
+ * @project   MMSPanel
+ */
+
+
 $module = array (
   'order' => 1,
   'menu' => array (
     array (
       'title' => '<strong>' . $this->_tr('File Server') . '</strong>',
-      'url'   => 'samba',
+      'url'   => '',
       'sub'   => array (
         array (
           'title' => $this->_tr('Account Policy'),

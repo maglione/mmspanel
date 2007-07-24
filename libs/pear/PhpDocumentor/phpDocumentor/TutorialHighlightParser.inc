@@ -41,7 +41,7 @@
  * @author     Gregory Beaver <cellog@php.net>
  * @copyright  2003-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: TutorialHighlightParser.inc,v 1.4 2006/05/01 04:13:51 cellog Exp $
+ * @version    CVS: $Id: TutorialHighlightParser.inc,v 1.5 2007/06/22 14:58:30 ashnazg Exp $
  * @tutorial   tags.example.pkg, tags.filesource.pkg
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
@@ -171,7 +171,7 @@ class phpDocumentor_TutorialHighlightParser extends Parser
             $this->_pv_curline = $this->_wp->linenum;
             $word = $this->_wp->getWord();
 
-            if (0)//PHPDOCUMENTOR_DEBUG == true)
+            if (PHPDOCUMENTOR_DEBUG == true)
             {
                 echo "LAST: ";
                 echo "|" . $this->_pv_last_word;

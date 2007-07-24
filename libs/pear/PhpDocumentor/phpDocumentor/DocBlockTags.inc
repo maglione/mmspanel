@@ -31,7 +31,7 @@
  * @author     Greg Beaver <cellog@php.net>
  * @copyright  2002-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: DocBlockTags.inc,v 1.8 2006/10/24 04:18:14 cellog Exp $
+ * @version    CVS: $Id: DocBlockTags.inc,v 1.10 2007/04/19 20:20:57 ashnazg Exp $
  * @filesource
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
@@ -45,9 +45,9 @@
  * using inherited functions
  * @package phpDocumentor
  * @subpackage DocBlockTags
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.0rc1
- * @version $Id: DocBlockTags.inc,v 1.8 2006/10/24 04:18:14 cellog Exp $
+ * @version $Id: DocBlockTags.inc,v 1.10 2007/04/19 20:20:57 ashnazg Exp $
  */
 class parserTag extends parserStringWithInlineTags
 {
@@ -271,9 +271,9 @@ class parserAccessTag extends parserTag
  * @tutorial tags.return.pkg
  * @package phpDocumentor
  * @subpackage DocBlockTags
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.0rc1
- * @version $Id: DocBlockTags.inc,v 1.8 2006/10/24 04:18:14 cellog Exp $
+ * @version $Id: DocBlockTags.inc,v 1.10 2007/04/19 20:20:57 ashnazg Exp $
  */
 class parserReturnTag extends parserTag
 {
@@ -359,13 +359,89 @@ class parserReturnTag extends parserTag
 }
 
 /**
+ * represents "@property" tag
+ * @package phpDocumentor
+ * @subpackage DocBlockTags
+ */
+class parserPropertyTag extends parserReturnTag
+{
+    /**
+     * always 'property'
+     * @var string
+     */
+    var $keyword = 'property';
+    /**
+     * the type a property has
+     * @var string
+     */
+    var $returnType = 'mixed';
+
+    /**
+     * @param string
+     * @param parserStringWithInlineTags
+     */
+    function parserPropertyTag( $returnType, $value )
+    {
+        $this->returnType = $returnType;
+        parent::parserTag( $this->keyword, $value );
+    }
+}
+
+/**
+ * represents "@property-read" tag
+ * @package phpDocumentor
+ * @subpackage DocBlockTags
+ */
+class parserPropertyReadTag extends parserPropertyTag
+{
+    /**
+     * always 'property-read'
+     * @var string
+     */
+    var $keyword = 'property-read';
+}
+
+/**
+ * represents "@property-write" tag
+ * @package phpDocumentor
+ * @subpackage DocBlockTags
+ */
+class parserPropertyWriteTag extends parserPropertyTag
+{
+    /**
+     * always 'property-write'
+     * @var string
+     */
+    var $keyword = 'property-write';
+}
+
+/**
+ * represents "@method" tag
+ * @package phpDocumentor
+ * @subpackage DocBlockTags
+ */
+class parserMethodTag extends parserPropertyTag
+{
+    /**
+     * always 'method'
+     * @var string
+     */
+    var $keyword = 'method';
+    /**
+     * the return type a method has
+     * @var string
+     */
+    var $returnType = 'void';
+}
+
+/**
  * represents "@var"
  * @tutorial tags.var.pkg
  * @package phpDocumentor
  * @subpackage DocBlockTags
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.0rc1
- * @version $Id: DocBlockTags.inc,v 1.8 2006/10/24 04:18:14 cellog Exp $
+ * @version $Id: DocBlockTags.inc,v 1.10 2007/04/19 20:20:57 ashnazg Exp $
  */
 class parserVarTag extends parserReturnTag
 {
@@ -416,9 +492,9 @@ class parserStaticvarTag extends parserParamTag
  * @tutorial tags.link.pkg
  * @package phpDocumentor
  * @subpackage DocBlockTags
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.0rc1
- * @version $Id: DocBlockTags.inc,v 1.8 2006/10/24 04:18:14 cellog Exp $
+ * @version $Id: DocBlockTags.inc,v 1.10 2007/04/19 20:20:57 ashnazg Exp $
  */
 class parserLinkTag extends parserTag
 {
@@ -452,9 +528,9 @@ class parserLinkTag extends parserTag
  * @tutorial tags.see.pkg
  * @package phpDocumentor
  * @subpackage DocBlockTags
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.0rc1
- * @version $Id: DocBlockTags.inc,v 1.8 2006/10/24 04:18:14 cellog Exp $
+ * @version $Id: DocBlockTags.inc,v 1.10 2007/04/19 20:20:57 ashnazg Exp $
  */
 class parserSeeTag extends parserLinkTag
 {

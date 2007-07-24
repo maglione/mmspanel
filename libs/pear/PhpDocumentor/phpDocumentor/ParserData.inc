@@ -30,7 +30,7 @@
  * @author     Gregory Beaver <cellog@php.net>
  * @copyright  2002-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: ParserData.inc,v 1.6 2006/10/23 04:02:46 cellog Exp $
+ * @version    CVS: $Id: ParserData.inc,v 1.8 2007/04/24 21:27:43 ashnazg Exp $
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
  * @since      1.0rc1
@@ -40,9 +40,9 @@
  * together.
  * @package phpDocumentor
  * @subpackage ParserData
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.0rc1
- * @version $Id: ParserData.inc,v 1.6 2006/10/23 04:02:46 cellog Exp $
+ * @version $Id: ParserData.inc,v 1.8 2007/04/24 21:27:43 ashnazg Exp $
  */
 class parserPage
 {
@@ -236,26 +236,34 @@ class parserPage
     * @param Converter
     * @param boolean if this parameter is true, it will truncate the source location to the
     * subdirectory of pear
-     * @return string path of this file relative to program root
-     */
+    * @return string path of this file relative to program root
+    * @todo determine if the str_replace in the 'pear/' ELSE branch should be removed 
+    *       (see Documentation/tests/bug1574043.php).  It does NOT exist in the similar
+    *       function parserClass->getSourceLocation() in ParserElements.inc.
+    */
     function getSourceLocation ($c,$pearize = false)
     {
         global $_phpDocumentor_options;
-        if (!isset($this->sourceLocation)) return false;
-        if ($pearize)
+        if (!isset($this->sourceLocation)) 
+        {
+            $sl = false;   
+        }
+        else 
         {
             $sl = $this->sourceLocation;
-            if (strpos($sl,'pear/'))
+            if ($pearize)
             {
-                $sl = substr($sl,strpos($sl,'pear/') + 5);
-                return $sl;
-            } else
-            {
-                return str_replace($_phpDocumentor_options['Program_Root'] . PATH_DELIMITER,'',$sl);
+                if (strpos($sl,'pear/'))
+                {
+                    $sl = substr($sl,strpos($sl,'pear/') + 5);
+                } 
+                else
+                {
+                    $sl = str_replace($_phpDocumentor_options['Program_Root'] . PATH_DELIMITER,'',$sl);
+                }
             }
-            return $sl;
         }
-        return $this->sourceLocation;
+        return $sl;
     }
     /**
      * Not implemented in this version
@@ -280,9 +288,9 @@ class parserPage
  * and {@link Converter})
  * @package phpDocumentor
  * @subpackage ParserData
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.0rc1
- * @version $Id: ParserData.inc,v 1.6 2006/10/23 04:02:46 cellog Exp $
+ * @version $Id: ParserData.inc,v 1.8 2007/04/24 21:27:43 ashnazg Exp $
  */
 class parserData
 {
@@ -559,9 +567,9 @@ class parserData
  * @package phpDocumentor
  * @subpackage ParserData
  * @abstract
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.0rc1
- * @version $Id: ParserData.inc,v 1.6 2006/10/23 04:02:46 cellog Exp $
+ * @version $Id: ParserData.inc,v 1.8 2007/04/24 21:27:43 ashnazg Exp $
  */
 class parserBase
 {
@@ -608,9 +616,9 @@ class parserBase
  * Used to represent strings that contain inline tags, so that they can be properly parsed at link time
  * @package phpDocumentor
  * @subpackage ParserData
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.0rc1
- * @version $Id: ParserData.inc,v 1.6 2006/10/23 04:02:46 cellog Exp $
+ * @version $Id: ParserData.inc,v 1.8 2007/04/24 21:27:43 ashnazg Exp $
  */
 class parserStringWithInlineTags extends parserBase
 {

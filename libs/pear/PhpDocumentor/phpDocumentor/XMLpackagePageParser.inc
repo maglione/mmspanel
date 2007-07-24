@@ -30,7 +30,7 @@
  * @author     Gregory Beaver <cellog@php.net>
  * @copyright  2002-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: XMLpackagePageParser.inc,v 1.10 2006/05/22 01:07:28 cellog Exp $
+ * @version    CVS: $Id: XMLpackagePageParser.inc,v 1.12 2007/06/22 14:58:30 ashnazg Exp $
  * @tutorial   tutorials.pkg
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
@@ -61,7 +61,7 @@ define('PHPDOCUMENTOR_PDP_STATE_ENTITY', 704);
  * Used to parse XML DocBook-based tutorials
  * @package phpDocumentor
  * @subpackage Parsers
- * @author Greg Beaver <cellog@users.sourceforge.net>
+ * @author Greg Beaver <cellog@php.net>
  * @since 1.2
  */
 class XMLPackagePageParser extends Parser
@@ -159,7 +159,7 @@ class XMLPackagePageParser extends Parser
             $this->p_vars['last_word'] = $word;
             $word = $this->wp->getWord();
 
-            if (0)//PHPDOCUMENTOR_DEBUG == true)
+            if (PHPDOCUMENTOR_DEBUG == true)
             {
                 echo "----------------\n";
                 echo "LAST: |" . $this->p_vars['last_word'] . "|\n";

@@ -31,7 +31,7 @@
  * @author     Greg Beaver <cellog@php.net>
  * @copyright  2003-2006 Andrew Eddie, Greg Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: config.php,v 1.4 2006/04/30 22:18:13 cellog Exp $
+ * @version    CVS: $Id: config.php,v 1.6 2007/04/19 20:20:56 ashnazg Exp $
  * @filesource
  * @see phpdoc.php
  */
@@ -600,24 +600,28 @@ var screenShots = new Array();
 		<br>Juan Pablo Morales <a href=
 		"mailto:ju-moral@uniandes.edu.co">ju-moral@uniandes.edu.co</a>
 		<br>Gregory Beaver <a href=
-		"mailto:cellog@users.sourceforge.net">cellog@users.sourceforge.net</a>
+		"mailto:cellog@php.net">cellog@php.net</a>
 		<br>Andrew Eddie <a href=
 		"mailto:eddieajau@users.sourceforge.net">eddieajau@users.sourceforge.net</a>
 		</p>
 		<p>
-		If you have any problems with phpDocumentor, please visit the website: <a href='http://phpdocu.sourceforge.net'>phpdocu.sourceforge.net</a> and submit a bug
+		If you have any problems with phpDocumentor, please visit the website: 
+        <a href='http://phpdoc.org'>phpdoc.org</a>, or 
+        <a href="http://pear.php.net/bugs/search.php?cmd=display&package_name[]=PhpDocumentor&status=Open">
+        submit a bug at PEAR</a>.
 		</p>
 		<!-- Created: Tue Jun 26 18:52:40 MEST 2001 -->
 		<!-- hhmts start -->
 		<pre>
-		Last modified: $Date: 2006/04/30 22:18:13 $
-		Revision: $Revision: 1.4 $
+		Last modified: $Date: 2007/04/19 20:20:56 $
+		Revision: $Revision: 1.6 $
 		</pre>
 	</div>
 	<div class="tab-page" id="tab_links">
 		<h2 class="tab">Links</h2>
 		<ul>
 			<li><a target="_top" href="http://www.phpdoc.org/manual.php">phpDocumentor manual</a> - Learn how to use phpDocumentor to document your PHP source code</li>
+            <li><a target="_top" href="http://pear.php.net/package/PhpDocumentor/">phpDocumentor homepage</a> on PEAR</li>
 			<li><a target="_top" href="http://phpdocu.sourceforge.net/">phpDocumentor homepage</a> on SourceForge</li>
 			<li><a target="_top" href="http://freshmeat.net/projects/phpdocu">Freshmeat record</a> - subscribe here</li>
 		</ul>

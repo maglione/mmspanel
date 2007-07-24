@@ -29,7 +29,7 @@
  * @author     Greg Beaver <cellog@php.net>
  * @copyright  2001-2006 Gregory Beaver
  * @license    http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @version    CVS: $Id: common.inc.php,v 1.7.2.1 2007/04/04 14:31:32 ashnazg Exp $
+ * @version    CVS: $Id: common.inc.php,v 1.11 2007/06/01 19:48:47 ashnazg Exp $
  * @filesource
  * @link       http://www.phpdoc.org
  * @link       http://pear.php.net/PhpDocumentor
@@ -40,9 +40,10 @@
 /** phpDocumentor version */
 if ('/tmp/pear' != '@'.'PEAR-DIR@')
 {
-    define("PHPDOCUMENTOR_VER","1.3.2");
+    /** @ignore */
+    define("PHPDOCUMENTOR_VER","1.4.0");
 } else {
-    define("PHPDOCUMENTOR_VER","1.3.2");
+    define("PHPDOCUMENTOR_VER","1.4.0a2");
 }
 /** phpDocumentor version */
 define("PHPDOCUMENTOR_WEBSITE","http://www.phpdoc.org");
@@ -53,7 +54,7 @@ define('PATH_DELIMITER', '/' ); // set the correct path delimiter
 define('PHPDOCUMENTOR_WINDOWS',substr(PHP_OS, 0, 3) == 'WIN');
 define('_IN_PHP5', phpversion() == '5.0.0RC1-dev' || phpversion() == '5.0.0RC2-dev' ||
     version_compare(phpversion(), '5.0.0', 'ge'));
-if ('1.3.2' != '@'.'VER@')
+if ('1.4.0' != '@'.'VER@')
 {
     if (_IN_PHP5) {
         require_once 'PhpDocumentor/phpDocumentor/clone5.inc.php';
