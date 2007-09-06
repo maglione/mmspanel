@@ -50,8 +50,7 @@ class NetPanel extends MaglioneFramework {
               );
     $search = $this->Ldap->search(LDAP_ROOT_DN, '(objectclass=SambaDomain)', $options);
 
-
-   $result = $search->entries();
+    $result = $search->entries();
 
     $this->SambaDomainName = trim($result[0]->getValue('sambadomainname','single'));
     $this->SambaSID = trim($result[0]->getValue('sambasid','single'));

@@ -92,7 +92,7 @@ class SambaStatus extends Samba
       }
 
       if ($start) {
-        if (ereg('^([0-9]+) +([a-zA-Z0-9._-]+) +([a-zA-Z0-9._-]+) +([a-zA-Z0-9._-]+) +\(([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})\)$', $status_line, $regs)) {
+        if (ereg('^([0-9]+)  +([a-zA-Z0-9._-]+)  +([a-zA-Z0-9._-]+)  +([a-zA-Z0-9._-]+) +\(([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})\)$', $status_line, $regs)) {
           $user = array();
 
           $user['computer'] = $regs[4];
