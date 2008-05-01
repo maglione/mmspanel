@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 5)
 Standards-Version: 3.7.2
 
 Package: mmspanel
-Architecture: any
+Architecture: all
 Depends: gettext, libapache-mod-php4 | libapache2-mod-php4 | libapache-mod-php5 | libapache2-mod-php5, php4-ldap | php5-ldap
 Description: Web based control panel designed to easily manage services hosted on a central server.
  MMSPanel - Maglione Modular Server Panel is a web-based panel, designed to 
