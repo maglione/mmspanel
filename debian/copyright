@@ -1,0 +1,21 @@
+This package was debianized by Daniel Maglione <daniel@maglione.com.br> on
+Wed, 30 Apr 2008 21:38:26 -0300.
+
+It was downloaded from http://sourceforge.net/projects/mmspanel
+
+Upstream Author(s): 
+
+    Daniel Vancetto Maglione <daniel@maglione.com.br>
+
+Copyright: 
+
+    Copyright (C) 2007 - Daniel Vancetto Maglione
+
+License:
+
+    This source file is subject to version 2.0 of GNU GENERAL PUBLIC LICENSE (GPL).
+    See the enclosed file COPYRIGHT for license information. If you did not receive
+    this file, see http://www.gnu.org/licenses/gpl-2.0.txt.
+
+The Debian packaging is (C) 2008, Daniel Maglione <daniel@maglione.com.br> and
+is licensed under the GPL, see `/usr/share/common-licenses/GPL'.

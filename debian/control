@@ -1,0 +1,15 @@
+Source: mmspanel
+Section: web
+Priority: extra
+Maintainer: Daniel Maglione <daniel@maglione.com.br>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: mmspanel
+Architecture: any
+Depends: libapache-mod-php4 | libapache2-mod-php4 | libapache-mod-php5 | libapache2-mod-php5, php-ldap
+Description: Web based control panel designed to easily manage services hosted on a central server.
+ MMSPanel - Maglione Modular Server Panel is a web-based panel, designed to 
+ easily manage services hosted on a central server, using SAMBA/LDAP. Object 
+ oriented, expansible through plugins, developed using PHP/PEAR, internationalized 
+ by GNU/gettext.
