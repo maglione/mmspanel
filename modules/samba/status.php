@@ -57,7 +57,7 @@ class SambaStatus extends Samba
       }
 
       if ($start) {
-        if (ereg('^([0-9]+) +([a-zA-Z0-9._-]+) +([a-zA-Z0-9._-]+) +([a-zA-Z0-9._-]+) +\(([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})\)$', $status_line, $regs)) {
+        if (ereg('([0-9]+)  +([a-zA-Z0-9._-]+)  +([a-zA-Z0-9 ._-]+)  +([a-zA-Z0-9._-]+) +\(([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})\)$', $status_line, $regs)) {
           $user = array();
 
           $user['computer'] = $regs[4];
@@ -92,7 +92,7 @@ class SambaStatus extends Samba
       }
 
       if ($start) {
-        if (ereg('^([0-9]+)  +([a-zA-Z0-9._-]+)  +([a-zA-Z0-9._-]+)  +([a-zA-Z0-9._-]+) +\(([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})\)$', $status_line, $regs)) {
+        if (ereg('([0-9]+)  +([a-zA-Z0-9._-]+)  +([a-zA-Z0-9 ._-]+)  +([a-zA-Z0-9._-]+) +\(([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})\)$', $status_line, $regs)) {
           $user = array();
 
           $user['computer'] = $regs[4];
@@ -100,7 +100,6 @@ class SambaStatus extends Samba
           $user['username'] = $regs[2];
           $user['group'] = $regs[3];
           $user['sambapid'] = $regs[1];
-
           $users[] = $user;
         }
       }
@@ -117,16 +116,15 @@ class SambaStatus extends Samba
     $shares = array();
 
     foreach ($smbstatus as $status_line) {
-      if(ereg('^Service +pid +machine +Connected at', $status_line)) {
+      if(eregi('^Service +pid +machine +Connected at', $status_line)) {
         $start = true;
       }
       if ( (! $status_line) && ($start) ) {
         asort($shares);
         return($shares);
       }
-
       if ($start) {
-        if (eregi('^([[:alnum:][:punct:]]+) +([0-9]+) +([[:alnum:][:punct:]]+) +([a-zA-Z]{3} +[a-zA-Z]{3} +[0-9]{1,2} +[0-9]{1,2}:[0-9]{1,2}:[0-9]{1,2} +[0-9]{4})$', $status_line, $regs)) {
+        if (eregi('([[:alnum:][:punct:]]+) +([0-9]+) +([[:alnum:][:punct:]]+) +([a-zA-Z]{3} +[a-zA-Z]{3} +[0-9]{1,2} +[0-9]{1,2}:[0-9]{1,2}:[0-9]{1,2} +[0-9]{4})$', $status_line, $regs)) {
           $share = array();
 
           $share['service'] = $regs[1];
@@ -152,7 +150,7 @@ class SambaStatus extends Samba
     $files = array();
 
     foreach ($smbstatus as $status_line) {
-      if(ereg('^Pid +DenyMode +Access +R/W +Oplock +Name', $status_line)) {
+      if(ereg('^Pid +Uid +DenyMode +Access +R/W +Oplock +SharePath +Name', $status_line)) {
         $start = true;
       }
       if ( (! $status_line) && ($start) ) {
@@ -161,7 +159,7 @@ class SambaStatus extends Samba
       }
 
       if ($start) {
-        if (eregi('^([0-9]+) +([[:alnum:][:punct:]]+) +(0x[0-9ABCDEF]+) +([[:alnum:][:punct:]]+) +([[:alnum:][:punct:]]+)? +(.+) +([a-zA-Z]{3} +[a-zA-Z]{3} +[0-9]{1,2} +[0-9]{1,2}:[0-9]{1,2}:[0-9]{1,2} +[0-9]{4})$', $status_line, $regs)) {
+        if (eregi('([0-9]+)  +[0-9]+  +([[:alnum:][:punct:]]+)  +(0x[0-9ABCDEF]+)  +([[:alnum:][:punct:]]+)  +([[:alnum:][:punct:]]+)?  +(.+)  +([a-zA-Z]{3} +[a-zA-Z]{3} +[0-9]{1,2} +[0-9]{1,2}:[0-9]{1,2}:[0-9]{1,2} +[0-9]{4})$', $status_line, $regs)) {
           $file = array();
 
           $file['name'] = $regs[6];
