@@ -145,7 +145,7 @@ class MaglioneFramework {
     $this->Template->outputDate = '';
     $this->Template->outputDomain = '';
     $this->Template->outputTools = '';
-    $this->Template->sys_theme_dir = '/themes/' . SYS_THEME_DIR;
+    $this->Template->sys_theme_dir = SYS_URL_SERVER. '/themes/' . SYS_THEME_DIR;
     $this->Template->sys_url_server = SYS_URL_SERVER;
     $this->Template->sys_url_index = SYS_URL_INDEX;
   }

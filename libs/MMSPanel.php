@@ -92,7 +92,7 @@ class NetPanel extends MaglioneFramework {
     if ($key == 'url') {
       if (ereg('([[:alnum:]]+)_(.+)', $item, $registers))
       {
-        $item = '/modules/' . $registers[1] . '/' . $registers[2] . '.php';
+        $item = SYS_URL_SERVER . '/modules/' . $registers[1] . '/' . $registers[2] . '.php';
       }
     }
   }
