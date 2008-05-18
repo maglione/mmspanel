@@ -1,0 +1,8 @@
+etc/mmspanel/config.php
+usr/share/mmspanel/index.php
+usr/share/mmspanel/libs/*
+usr/share/mmspanel/locale/*
+usr/share/mmspanel/template/*
+usr/share/mmspanel/themes/*
+usr/share/mmspanel/tmp/*
+usr/share/mmspanel/modules/server/*

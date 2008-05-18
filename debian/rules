@@ -39,6 +39,7 @@ clean:
 	# Add here commands to clean up after the build process.
 	# -$(MAKE) clean
 	rm -rf $(CURDIR)/debian/mmspanel
+	rm -rf $(CURDIR)/debian/mmspanel-samba
 
 	dh_clean 
 
@@ -50,20 +51,22 @@ install: build
 
 	# Add here commands to install the package into debian/mmspanel.
 	# $(MAKE) DESTDIR=$(CURDIR)/debian/mmspanel install
-	mkdir -p $(CURDIR)/debian/mmspanel/usr/share/mmspanel
-	mkdir -p $(CURDIR)/debian/mmspanel/etc/mmspanel
 
 	cp -a $(CURDIR)/config.php $(CURDIR)/debian/mmspanel/etc/mmspanel
 	cp -a $(CURDIR)/index.php $(CURDIR)/debian/mmspanel/usr/share/mmspanel
 	cp -a $(CURDIR)/libs $(CURDIR)/debian/mmspanel/usr/share/mmspanel
 	cp -a $(CURDIR)/locale $(CURDIR)/debian/mmspanel/usr/share/mmspanel
 	cp -a $(CURDIR)/Makefile $(CURDIR)/debian/mmspanel/usr/share/mmspanel
-	cp -a $(CURDIR)/modules $(CURDIR)/debian/mmspanel/usr/share/mmspanel
+	cp -a $(CURDIR)/modules/server $(CURDIR)/debian/mmspanel/usr/share/mmspanel/modules
 	cp -a $(CURDIR)/template $(CURDIR)/debian/mmspanel/usr/share/mmspanel
 	cp -a $(CURDIR)/themes $(CURDIR)/debian/mmspanel/usr/share/mmspanel
 	cp -a $(CURDIR)/tmp $(CURDIR)/debian/mmspanel/usr/share/mmspanel
+	
+	cp -a $(CURDIR)/modules/samba/config.php $(CURDIR)/debian/mmspanel-samba/etc/mmspanel/samba
+	cp -a $(CURDIR)/modules/samba $(CURDIR)/debian/mmspanel-samba/usr/share/mmspanel/modules
 
-	find $(CURDIR)/debian/mmspanel/usr/share/mmspanel -name .svn | xargs -i rm -rf {}
+	find $(CURDIR)/debian/mmspanel -name .svn | xargs -i rm -rf {}
+	find $(CURDIR)/debian/mmspanel-samba -name .svn | xargs -i rm -rf {}
 
 # Build architecture-independent files here.
 binary-indep: build install
