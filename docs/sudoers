@@ -1,0 +1,22 @@
+# /etc/sudoers
+#
+# This file MUST be edited with the 'visudo' command as root.
+#
+# See the man page for details on how to write a sudoers file.
+#
+
+Defaults        env_reset
+
+# Host alias specification
+
+# User alias specification
+User_Alias     MMSPANEL = www-data
+
+# Cmnd alias specification
+Cmnd_Alias     SMBLDAPTOOLS = /usr/sbin/smbldap-groupadd, /usr/sbin/smbldap-groupmod, /usr/sbin/smbldap-groupdel, /usr/sbin/smbldap-passwd, /usr/sbin/smbldap-useradd, /usr/sbin/smbldap-usermod, /usr/sbin/smbldap-userdel
+Cmnd_Alias     SAMBA        = /usr/bin/smbstatus
+
+# User privilege specification
+root     ALL=(ALL) ALL
+
+MMSPANEL ALL = NOPASSWD:SMBLDAPTOOLS, NOPASSWD:SAMBA
