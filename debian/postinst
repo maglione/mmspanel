@@ -21,6 +21,8 @@ set -e
 case "$1" in
     configure)
         ln -s /etc/mmspanel/config.php /usr/share/mmspanel/config.php
+	chown -R www-data:www-data /usr/share/mmspanel
+	chmod u+w /usr/share/mmspanel/tmp
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
