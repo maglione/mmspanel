@@ -1,0 +1,32 @@
+MMSPanel - Maglione Modular Server Panel is a web-based panel, designed to easily manage services hosted on a central server, using SAMBA/LDAP. Object oriented, expansible through plugins, developed using PHP/PEAR, internationalized by GNU/gettext.
+
+
+MMSPanel - Maglione Modular Server Panel é um painel baseado em web, projetado para gerenciar facilmente serviços hospedados em um servidor central, utilizando SAMBA/LDAP. Orientado a objetos, expansível através de plugins, desenvolvido em PHP/PEAR e internacionalizado com gettext.
+
+==========================================================================
+
+MMSPanel - Maglione Modular Server Panel (Painel de Servidor Modular Maglione)
+
+MMSPanel foi projetado para ajudar a gerenciar facilmente os serviços hospedados em um servidor que utiliza SAMBA/LDAP. Seu objetivo principal é fornecer uma interface fácil para usuários finais gerenciarem seu próprio servidor. 
+
+O projeto iniciou da demanda em facilitar a administração de servidores linux para usuários com pouca experiência, fornecendo uma interface limpa e fácil para inclusão, alteração, exclusão de usuários, criação de grupos, gerenciamento de permissões, etc, sem as dificuldades encontradas em outros produtos do gênero, consequentemente popularizando este tipo de ambiente. Inicialmente, a idéia da interface veio do descontinuado projeto SambaConsole (escrito em Perl). Após o planejamento da estrutura modular, pretendo desenvolver mais modulos, como plugins para controle do proxy Squid, do eJabberD e do PoPToP/FreeRADIUS, todos autenticando em base LDAP.
+
+O MMSPanel está sendo desenvolvido em linguagem PHP, orientado a objetos e utilizando a biblioteca de componentes PEAR para fazer a maior parte das tarefas comuns possíveis, mantendo o código razoavelmente pequeno e de fácil entendimento. Já foi testado nas versões 4.3.8 e 5.0 do PHP, rodando em Debian GNU/Linux 3.1 e 4.0.
+
+O sistema pode utilizar templates personalizáveis e suporta temas utilizando o PEAR/HTML_Flexy. Toda a comunicação com LDAP é feita através do módulo PEAR/Net_Ldap, e a internacionalização / localização através do PEAR/Translation2, PEAR/I18nv2 e PEAR/File_GetText, o que torna o sistema facilmente customizável, portável e de fácil depuração. Especificamente no plugin do Samba/LDAP, algumas operações de "baixo nível", são realizadas utilizando os programas smbldap-tools, compatibilizando a operação via painel fica com operações realizadas em linha de comando.
+
+Com design orientado a plugins, será bem fácil desenvolver novos módulos de controle, e, com a estrutura de orientação a objetos, muitas funções podem ser aproveitadas, tornando rápido o desenvolvimento de novas funcionalidades.
+
+
+
+MMSPanel - Maglione Modular Server Panel
+
+MMSPanel was designed to help on easy manage of services hosted on a central server using SAMBA/LDAP. It's primary goal is to provide an easy interface to final users manage your own server.
+
+The project started of the demand in facilitating the administration of Linux servers for users with no experience, supplying a clean and easy interface to add, modify and delete users, creation of groups, permissions management, etc, without the difficulties found in other products, popularizing this type of environment by consequence. Initially, the idea of the interface came of the discontinued SambaConsole project (written in Perl). After planning the modular structure, I intends to develop more modules, as plugins for Squid proxy control, eJabberD and the PoPToP/FreeRADIUS, with LDAP based authentication.
+
+MMSPanel is be developed with PHP language, object oriented and using the PEAR component library to do most of common jobs as possible, keeping the code reasonably small and easy of understanding.
+
+The system can use personalized templates, and support themes using PEAR/HTML_Flexy. All LDAP comunication is done through PEAR/Net_Ldap module and the internationalization / localization through PEAR/Translation2, PEAR/I18nv2 and PEAR/File_GetText, becoming the system easily customizable, portable and easy to debug. Specifically in the Samba/LDAP plugin, some "low-level" operations are done using smbldap-tools programs, making compatible panel operations with command-line operations.
+
+With plugin oriented architecture, will be easily to develop new control modules, and, with object oriented structure, many functions can be reused, becoming fast new features development.

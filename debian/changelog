@@ -1,3 +1,11 @@
+mmspanel (0.1-beta02-1) unstable; urgency=low
+
+  * Changed Samba Group filter to posixGroup;
+  * Included PEAR dependencies;
+  * Removed built-in PEAR libraries.
+
+ -- Daniel Maglione <daniel@maglione.com.br>  Sun, 01 Jun 2008 17:12:33 -0300
+
 mmspanel (0.1-beta01-1) unstable; urgency=low
 
   * Initial release.

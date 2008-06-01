@@ -21,7 +21,8 @@ require_once '../../config.php';
 /** Samba module pre setup */
 require_once 'config.php';
 
-@ini_set('include_path', REAL_PATH . PATH_SEPARATOR . REAL_PATH . '/libs' . PATH_SEPARATOR . REAL_PATH . '/libs/pear' . PATH_SEPARATOR . REAL_PATH . '/libs/php-gettext');
+#@ini_set('include_path', REAL_PATH . PATH_SEPARATOR . REAL_PATH . '/libs' . PATH_SEPARATOR . REAL_PATH . '/libs/pear' . PATH_SEPARATOR . REAL_PATH . '/libs/php-gettext');
+@ini_set('include_path', REAL_PATH . PATH_SEPARATOR . REAL_PATH . '/libs' . PATH_SEPARATOR . '/usr/share/php');
 
 /** Framework library */
 require_once 'MMSPanel.php';
@@ -118,7 +119,7 @@ class Samba extends NetPanel
                     'scope' => 'one',
                     'attributes' => array('dn', 'gidNumber', 'cn')
                );
-    $search = $this->Ldap->search(LDAP_GROUPS_OU . ', ' . LDAP_ROOT_DN, "(objectclass=sambaGroupMapping)", $options);
+    $search = $this->Ldap->search(LDAP_GROUPS_OU . ', ' . LDAP_ROOT_DN, "(objectclass=posixGroup)", $options);
 
     $groups_array = array();
     while($entry = $search->shiftEntry()) {
@@ -145,9 +146,9 @@ class Samba extends NetPanel
                     'attributes' => array('dn', 'cn')
                );
     if ($uid) {
-      $search = $this->Ldap->search(LDAP_GROUPS_OU . ', ' . LDAP_ROOT_DN, "(& (objectclass=sambaGroupMapping)(memberUid=$uid))", $options);
+      $search = $this->Ldap->search(LDAP_GROUPS_OU . ', ' . LDAP_ROOT_DN, "(& (objectclass=posixGroup)(memberUid=$uid))", $options);
     } else {
-      $search = $this->Ldap->search(LDAP_GROUPS_OU . ', ' . LDAP_ROOT_DN, "(objectclass=sambaGroupMapping)", $options);
+      $search = $this->Ldap->search(LDAP_GROUPS_OU . ', ' . LDAP_ROOT_DN, "(objectclass=posixGroup)", $options);
     }
 
     $groups_array = array();
@@ -200,7 +201,7 @@ class Samba extends NetPanel
                );
     if ($group_cn) {
       $options['attributes'] = array('memberUid');
-      $search = $this->Ldap->search(LDAP_GROUPS_OU . ', ' . LDAP_ROOT_DN, "(& (objectclass=sambaGroupMapping)(cn=$group_cn))", $options);
+      $search = $this->Ldap->search(LDAP_GROUPS_OU . ', ' . LDAP_ROOT_DN, "(& (objectclass=posixGroup)(cn=$group_cn))", $options);
       if ($entry = $search->shiftEntry()) {
         $users = $entry->getValue('memberUid', 'all');
         if (! $only_keys) {

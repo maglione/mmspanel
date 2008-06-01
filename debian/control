@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: mmspanel
 Architecture: all
-Depends: slapd, gettext, sudo, libapache-mod-php4 | libapache2-mod-php4 | libapache-mod-php5 | libapache2-mod-php5, php4-ldap | php5-ldap
+Depends: slapd, gettext, sudo, libapache-mod-php4 | libapache2-mod-php4 | libapache-mod-php5 | libapache2-mod-php5, php4-ldap | php5-ldap, php-pear, php-http-session, php-html-table, php-structures-datagrid, php-structures-datagrid-datasource-array, php-structures-datagrid-renderer-pager, php-structures-datagrid-renderer-htmltable, php-i18nv2, php-translation2, php-html-template-flexy, php-html-quickform, php-html-quickform-renderer-tableless, php-html-menu, php-validate, php-auth, php-net-ldap, php-php-compat
 Suggests: ldap-utils
 Description: Web based control panel designed to easily manage services hosted on a central server.
  MMSPanel - Maglione Modular Server Panel is a web-based panel, designed to 
@@ -17,7 +17,7 @@ Description: Web based control panel designed to easily manage services hosted o
 
 Package: mmspanel-samba
 Architecture: all
-Depends: mmspanel (= ${source:Version}), samba, smbldap-tools
+Depends: mmspanel (= ${source:Version}), samba, smbldap-tools, php-html-quickform-advmultiselect (= 1.4.0-1)
 Suggests: smbclient, samba-doc
 Description: Web based control panel designed to easily manage services hosted on a central server.
  MMSPanel - Maglione Modular Server Panel is a web-based panel, designed to 

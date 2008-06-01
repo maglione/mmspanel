@@ -20,7 +20,8 @@ set -e
 
 case "$1" in
     configure)
-        ln -s /etc/mmspanel/samba/config.php /usr/share/mmspanel/modules/samba/config.php
+	[ -f /usr/share/mmspanel/modules/samba/config.php ] && rm -f /usr/share/mmspanel/modules/samba/config.php
+	ln -s /etc/mmspanel/samba/config.php /usr/share/mmspanel/modules/samba/config.php
 	chown -R www-data:www-data /usr/share/mmspanel/modules/samba
     ;;
 

@@ -118,9 +118,9 @@ class SambaGroups extends Samba
                     'attributes' => array('cn','description', 'memberUid')
               );
     if ($this->Filter) {
-      $search = $this->Ldap->search(LDAP_GROUPS_OU . ', ' . LDAP_ROOT_DN, '(&(objectclass=sambaGroupMapping)( | (cn=*' . $this->Filter . '*) (description=*' . $this->Filter . '*) ))', $options);
+      $search = $this->Ldap->search(LDAP_GROUPS_OU . ', ' . LDAP_ROOT_DN, '(&(objectclass=posixGroup)( | (cn=*' . $this->Filter . '*) (description=*' . $this->Filter . '*) ))', $options);
     } else {
-      $search = $this->Ldap->search(LDAP_GROUPS_OU . ', ' . LDAP_ROOT_DN, '(objectclass=sambaGroupMapping)', $options);
+      $search = $this->Ldap->search(LDAP_GROUPS_OU . ', ' . LDAP_ROOT_DN, '(objectclass=posixGroup)', $options);
     }
 
     $groups = array();
